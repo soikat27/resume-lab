@@ -1,8 +1,6 @@
-import GeneralInfo from "./GeneralInfo";
-import { useState } from "react";
+import GeneralInfo from "./form_sections/GeneralInfo";
 
 export default function App() {
-    const [resumeInfo, setResumeInfo] = useState({});
     const sections = ["General Information", "Links", "Education", "Experience", "Download"];
     return (
         <div className="main-container">
@@ -14,7 +12,6 @@ export default function App() {
             </header>
             <main>
                 <div className="form">
-                    <h3>{sections[0]}</h3>
                     <GeneralInfo isFirst={true}></GeneralInfo>
                 </div>
                 <div className="resume">
