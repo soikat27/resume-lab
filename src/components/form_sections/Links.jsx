@@ -6,11 +6,11 @@ export default function Links () {
         <form className="container links">
             <h3>Header Links</h3>
 
-            <InputField type="url" name="LinkenIn"></InputField>
-            <InputField type="url" name="GitHub"></InputField>
-            <InputField type="url" name="Portfolio Website"></InputField>
+            <InputField type="url" name="LinkenIn" />
+            <InputField type="url" name="GitHub" />
+            <InputField type="url" name="Portfolio Website" />
 
-            <ButtonGroup></ButtonGroup>
+            <ButtonGroup />
         </form>
     );
 }
