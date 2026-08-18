@@ -1,0 +1,51 @@
+@font-face {
+    font-family: "Inter";
+    src: url("../assets/fonts/Inter/Inter-VariableFont_opsz,wght.ttf") format("truetype");
+    font-weight: 100 900;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: "Inter";
+    src: url("../assets/fonts/Inter/Inter-Italic-VariableFont_opsz,wght.ttf") format("truetype");
+    font-weight: 100 900;
+    font-style: italic;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: "Source Serif 4";
+    src: url("../assets/fonts/Source_Serif_4/SourceSerif4-VariableFont_opsz,wght.ttf") format("truetype");
+    font-weight: 100 900;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: "Source Serif 4";
+    src: url("../assets/fonts/Source_Serif_4/SourceSerif4-Italic-VariableFont_opsz,wght.ttf") format("truetype");
+    font-weight: 100 900;
+    font-style: italic;
+    font-display: swap;
+}
+
+:root {
+    --font-sans: "Inter", system-ui, sans-serif;
+    --font-serif: "Source Serif 4", Georgia, serif;
+
+    --color-bg: #fff;
+    --color-fg: #111;
+    --color-muted: #555;
+    --color-nav: #333;
+    --color-rule: #111;
+
+    --space-header-y: 0.85rem;
+    --space-header-x: 4.5rem;
+}
+
+body {
+    font-family: var(--font-sans);
+    background: var(--color-bg);
+    color: var(--color-fg);
+}

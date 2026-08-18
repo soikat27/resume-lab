@@ -1,12 +1,18 @@
 import GeneralInfo from "./form_sections/GeneralInfo";
 import SectionRail from "./SectionRail.jsx";
+import "../styles/header.css";
 
 export default function App() {
     return (
         <div className="main-container">
-            <header className="header">
-                <img src="#" alt="logo" />
-                <SectionRail />
+            <header>
+                <div className="header-inner">
+                    <div className="brand" aria-label="resumeLab">
+                        <span className="brand-resume">resume</span>
+                        <span className="brand-lab">Lab</span>
+                    </div>
+                    <SectionRail />
+                </div>
             </header>
             <main>
                 <div className="form">
