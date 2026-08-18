@@ -1,14 +1,12 @@
 import GeneralInfo from "./form_sections/GeneralInfo";
+import SectionRail from "./SectionRail.jsx";
 
 export default function App() {
-    const sections = ["General Information", "Links", "Education", "Experience", "Download"];
     return (
         <div className="main-container">
             <header className="header">
                 <img src="#" alt="logo" />
-                <div className="section_rail">
-                    {sections.map(sectionName => <button>{sectionName}</button>)}
-                </div>
+                <SectionRail />
             </header>
             <main>
                 <div className="form">
