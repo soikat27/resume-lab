@@ -1,6 +1,6 @@
 export default function ButtonGroup({isFirst, isLast, onChangeHandler, lastIndex}) {
-    const next = <button type="submit" onClick={() => {onNextHandler(onChangeHandler, lastIndex)}}>Save & Next</button>;
-    const prev = <button type="submit" onClick={() => {onPrevHandler(onChangeHandler)}}>previous</button>;
+    const next = <button className="btn-next" type="submit" onClick={() => {onNextHandler(onChangeHandler, lastIndex)}}>Save & Next</button>;
+    const prev = <button className="btn-prev" type="submit" onClick={() => {onPrevHandler(onChangeHandler)}}>previous</button>;
     
     return (
         <div className="buttons">

@@ -7,6 +7,8 @@ import Download from "./form_sections/Download.jsx";
 
 import { useState } from "react";
 import "../styles/header.css";
+import "../styles/sections.css";
+import "../styles/inputField.css";
 
 export default function App() {
     const sections = [GeneralInfo, Links, Education, Experience, Download];
@@ -19,7 +21,7 @@ export default function App() {
         <div className="main-container">
             <header>
                 <div className="header-inner">
-                    <div className="brand" aria-label="resumeLab">
+                    <div className="brand">
                         <span className="brand-resume">resume</span>
                         <span className="brand-lab">Lab</span>
                     </div>

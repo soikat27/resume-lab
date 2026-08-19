@@ -6,10 +6,10 @@ export default function Education (props) {
         <form className="container education">
             <h3>Education</h3>
 
-            <InputField type="" name="Institution Name" />
-            <InputField type="url" name="Degree" />
-            <InputField type="url" name="Start Date" />
-            <InputField type="url" name="End Date" />
+            <InputField type="text" name="Institution Name" />
+            <InputField type="text" name="Degree" />
+            <InputField type="date" name="Start Date" />
+            <InputField type="date" name="End Date" />
 
             <ButtonGroup {...props}/>
         </form>

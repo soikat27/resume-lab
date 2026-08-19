@@ -39,9 +39,13 @@
     --color-muted: #555;
     --color-nav: #333;
     --color-rule: #111;
+    --color-rule-soft: rgba(0, 0, 0, 0.08);
 
+    --content-max: 64rem;
+    --space-content-x: 4.5rem;
+    --space-section-y: 2.5rem;
     --space-header-y: 0.85rem;
-    --space-header-x: 4.5rem;
+    --space-header-x: var(--space-content-x);
 }
 
 body {
