@@ -9,6 +9,8 @@ import { useState } from "react";
 import "../styles/header.css";
 import "../styles/sections.css";
 import "../styles/inputField.css";
+import "../styles/footer.css";
+import githubIcon from "../assets/icons/github-icon.svg";
 
 export default function App() {
     const sections = [GeneralInfo, Links, Education, Experience, Download];
@@ -41,10 +43,10 @@ export default function App() {
                 </div>
             </main>
             <footer>
-                <p>All right reserved. Copyright @ 2026 - Soikat Saha</p>
-                <a href="http://github.com/soikat27">
-                    <img src="#" alt="github-icon" /> 
-                    GitHub
+                <p>© 2026 Soikat Saha. All rights reserved.</p>
+                <a href="https://github.com/soikat27/resume-lab" aria-label="View source code on GitHub">
+                    <img src={githubIcon} alt="" />
+                    Source Code
                 </a>
             </footer> 
         </div>
