@@ -1,7 +1,7 @@
 import InputField from "../InputField";
 import ButtonGroup from "../ButtonGroup";
 
-export default function Experience() {
+export default function Experience(props) {
     return (
         <form className="container experience">
             <h3>Revelant Experience</h3>
@@ -12,7 +12,7 @@ export default function Experience() {
             <InputField type="date" name="Start Date" />
             <InputField type="date" name="End Date" />
 
-            <ButtonGroup />
+            <ButtonGroup {...props}/>
         </form>
     );
 }

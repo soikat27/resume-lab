@@ -1,7 +1,7 @@
 import InputField from "../InputField.jsx";
 import ButtonGroup from "../ButtonGroup.jsx";
 
-export default function Links () {
+export default function Links (props) {
     return (
         <form className="container links">
             <h3>Header Links</h3>
@@ -10,7 +10,7 @@ export default function Links () {
             <InputField type="url" name="GitHub" />
             <InputField type="url" name="Portfolio Website" />
 
-            <ButtonGroup />
+            <ButtonGroup {...props}/>
         </form>
     );
 }

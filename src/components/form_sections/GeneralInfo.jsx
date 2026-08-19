@@ -1,7 +1,7 @@
 import InputField from "../InputField";
 import ButtonGroup from "../ButtonGroup";
 
-export default function GeneralInfo() {
+export default function GeneralInfo(props) {
     return (
         <form className="container gen_info">
             <h3>General Information</h3>
@@ -11,7 +11,7 @@ export default function GeneralInfo() {
             <InputField type="email" name="Email" />
             <InputField type="tel" name="Phone" />
 
-            <ButtonGroup />
+            <ButtonGroup {...props} />
         </form>
     );
 }

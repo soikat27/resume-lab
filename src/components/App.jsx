@@ -1,8 +1,20 @@
-import GeneralInfo from "./form_sections/GeneralInfo";
 import SectionRail from "./SectionRail.jsx";
+import GeneralInfo from "./form_sections/GeneralInfo";
+import Links from "./form_sections/Links.jsx";
+import Education from "./form_sections/Education.jsx";
+import Experience from "./form_sections/Experience.jsx";
+import Download from "./form_sections/Download.jsx";
+
+import { useState } from "react";
 import "../styles/header.css";
 
 export default function App() {
+    const sections = [GeneralInfo, Links, Education, Experience, Download];
+    const [activeSectionIndex, setActiveSectionIndex] = useState(0);
+    const CurrentSection = sections[activeSectionIndex];
+    const isFirstSection = (activeSectionIndex === 0) ? true : false;
+    const isLastSection = (activeSectionIndex === sections.length-1) ? true : false;
+
     return (
         <div className="main-container">
             <header>
@@ -16,7 +28,11 @@ export default function App() {
             </header>
             <main>
                 <div className="form">
-                    <GeneralInfo isFirst={true}></GeneralInfo>
+                    <CurrentSection 
+                        isFirst={isFirstSection} 
+                        isLast={isLastSection} 
+                        onChangeHandler={setActiveSectionIndex} 
+                        lastIndex={sections.length-1} />
                 </div>
                 <div className="resume">
                     
