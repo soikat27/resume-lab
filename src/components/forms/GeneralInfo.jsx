@@ -1,5 +1,5 @@
-import InputField from "../InputField";
-import ButtonGroup from "../ButtonGroup";
+import InputField from "./utils/InputField";
+import ButtonGroup from "./utils/ButtonGroup";
 
 export default function GeneralInfo(props) {
     return (

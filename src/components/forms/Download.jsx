@@ -1,4 +1,4 @@
-import ButtonGroup from "../ButtonGroup.jsx";
+import ButtonGroup from "./utils/ButtonGroup.jsx";
 
 export default function Download(props) {
     return (

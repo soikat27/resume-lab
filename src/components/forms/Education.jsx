@@ -1,5 +1,5 @@
-import InputField from "../InputField.jsx";
-import ButtonGroup from "../ButtonGroup.jsx";
+import InputField from "./utils/InputField.jsx";
+import ButtonGroup from "./utils/ButtonGroup.jsx";
 
 export default function Education (props) {
     return (
