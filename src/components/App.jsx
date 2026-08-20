@@ -1,12 +1,15 @@
-import SectionRail from "./SectionRail.jsx";
+import Header from "./app_sections/Header.jsx";
+
 import GeneralInfo from "./form_sections/GeneralInfo";
 import Links from "./form_sections/Links.jsx";
 import Education from "./form_sections/Education.jsx";
 import Experience from "./form_sections/Experience.jsx";
 import Download from "./form_sections/Download.jsx";
 
+import HeaderPreview from "./resume_sections/HeaderPreview.jsx";
+
 import { useState } from "react";
-import "../styles/header.css";
+
 import "../styles/sections.css";
 import "../styles/inputField.css";
 import "../styles/footer.css";
@@ -21,15 +24,8 @@ export default function App() {
 
     return (
         <div className="main-container">
-            <header>
-                <div className="header-inner">
-                    <div className="brand">
-                        <span className="brand-resume">resume</span>
-                        <span className="brand-lab">Lab</span>
-                    </div>
-                    <SectionRail />
-                </div>
-            </header>
+            <Header />
+            
             <main>
                 <div className="main-title">
                     <div className="title">
@@ -47,7 +43,7 @@ export default function App() {
                             lastIndex={sections.length-1} />
                     </div>
                     <div className="resume">
-                    
+                        {/* <HeaderPreview  /> */}
                     </div>
                 </div>
             </main>
