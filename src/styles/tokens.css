@@ -48,8 +48,15 @@
     --space-header-x: var(--space-content-x);
 }
 
+html,
+body,
+#root {
+    height: 100%;
+}
+
 body {
     font-family: var(--font-sans);
     background: var(--color-bg);
     color: var(--color-fg);
+    overflow-x: hidden;
 }

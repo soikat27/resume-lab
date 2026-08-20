@@ -6,9 +6,8 @@ export default function Links (props) {
         <form className="container links">
             <h3>Header Links</h3>
 
-            <InputField type="url" name="LinkenIn" />
-            <InputField type="url" name="GitHub" />
-            <InputField type="url" name="Portfolio Website" />
+            <InputField type="url" name="LinkenIn" placeHolder="ex. www.linkedin.com/in/user_name"/>
+            <InputField type="url" name="GitHub" placeHolder="ex. www.github.com/user_name"/>
 
             <ButtonGroup {...props}/>
         </form>
