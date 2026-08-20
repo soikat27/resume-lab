@@ -1,37 +1,153 @@
-.header-preview {
-    text-align: center;
-    margin-bottom: 1.5rem;
+/* Letterpaper preview — Jake-style 11pt article proportions
+   https://github.com/jakegut/resume */
+
+.resume {
+    --resume-page-ratio: 8.5 / 11;
+    --resume-margin-pct: 5.88%;
+    --resume-huge: 2.26em;
+    --resume-large: 1.09em;
+    --resume-small: 0.91em;
+
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    container-type: size;
+    container-name: resume;
+    overflow-x: auto;
+    overflow-y: hidden;
 }
 
-.header-preview .title p {
-    margin: 0;
+.resume-page {
+    /* Height-first: fill column; width from letter ratio */
+    height: 100%;
+    width: auto;
+    aspect-ratio: var(--resume-page-ratio);
+    max-width: none;
+    box-sizing: border-box;
+    background: #fff;
+    padding: var(--resume-margin-pct);
     font-family: var(--font-serif);
-    font-size: 1.75rem;
-    font-weight: 700;
-    letter-spacing: 0.02em;
-    text-transform: uppercase;
+    /* 11pt vs letter height (11in): 11pt/11in = 1/72 of page height */
+    font-size: 1.3889cqh;
     color: var(--color-fg);
-    line-height: 1.2;
+    line-height: 1.25;
+    overflow: auto;
+    border: 1px solid rgba(0, 0, 0, 0.12);
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.06);
+    flex-shrink: 0;
+}
+
+/* ----- Header (Jake center block) ----- */
+
+.header-preview {
+    text-align: center;
+    margin-bottom: 0.75em;
 }
 
 .header-preview .subtitle {
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
-    gap: 0.25rem 0.75rem;
-    margin-top: 0.5rem;
+    align-items: baseline;
+    gap: 0.15em 0;
+    margin-top: 0.15em;
 }
 
-.header-preview .subtitle p {
+.header-preview .item {
     margin: 0;
-    font-family: var(--font-sans);
-    font-size: 0.8125rem;
+    font-family: var(--font-serif);
     color: var(--color-fg);
-    line-height: 1.4;
 }
 
-.header-preview .subtitle p:not(:last-child)::after {
+.header-preview .item.large {
+    font-size: var(--resume-huge);
+    font-weight: 700;
+    font-variant: small-caps;
+    letter-spacing: 0.04em;
+    line-height: 1.15;
+}
+
+.header-preview .item.regular {
+    font-size: var(--resume-small);
+    white-space: nowrap;
+    line-height: 1.35;
+}
+
+.header-preview .subtitle .item:not(:last-child)::after {
     content: "|";
-    margin-left: 0.75rem;
-    color: var(--color-muted);
+    margin-inline: 0.45em;
+    color: var(--color-fg);
+}
+
+.header-preview .item.link {
+    text-decoration: underline;
+    text-underline-offset: 0.12em;
+}
+
+/* ----- Section shell (for Education / Experience / etc.) ----- */
+
+.resume-page .resume-section {
+    margin-top: 0.65em;
+}
+
+.resume-page .resume-section > h2,
+.resume-page .resume-section-title {
+    margin: 0 0 0.35em;
+    padding-bottom: 0.12em;
+    font-family: var(--font-serif);
+    font-size: var(--resume-large);
+    font-weight: 400;
+    font-variant: small-caps;
+    letter-spacing: 0.06em;
+    text-align: left;
+    color: var(--color-fg);
+    border-bottom: 1px solid var(--color-fg);
+    line-height: 1.2;
+}
+
+.resume-page .resume-entry {
+    display: grid;
+    grid-template-columns: 1fr auto;
+    column-gap: 0.75em;
+    row-gap: 0.05em;
+    margin-top: 0.45em;
+    font-size: 1em;
+}
+
+.resume-page .resume-entry-title {
+    margin: 0;
+    font-weight: 700;
+}
+
+.resume-page .resume-entry-date,
+.resume-page .resume-entry-location {
+    margin: 0;
+    font-size: var(--resume-small);
+    font-style: italic;
+    text-align: right;
+}
+
+.resume-page .resume-entry-subtitle {
+    margin: 0;
+    font-size: var(--resume-small);
+    font-style: italic;
+    grid-column: 1;
+}
+
+.resume-page .resume-entry-location {
+    grid-column: 2;
+}
+
+.resume-page .resume-bullets {
+    margin: 0.2em 0 0.35em;
+    padding-left: 1.1em;
+    font-size: var(--resume-small);
+}
+
+.resume-page .resume-bullets li {
+    margin-bottom: 0.12em;
+}
+
+.resume-page .resume-bullets li::marker {
+    font-size: 0.65em;
 }

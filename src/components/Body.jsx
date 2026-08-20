@@ -18,18 +18,16 @@ export default function Body({activeFormIndex, setActiveFormIndex}) {
     const [resumeInfo, setResumeInfo] = useState({});
 
     function nextForm(event) {
-        // 1. prevent submit default -> get form and formData
-        event.preventDefault();
+        // 1. get form data
         const form = event.target;
         const formData = new FormData(form);
 
         // 2. populate wih new info
         setResumeInfo((previous) => {
             const fullname = formData.get("Full Name");
-            const address = formData.get("Address");
             const email = formData.get("Email");
             const phone = formData.get("Phone");
-            return {...previous, fullname: fullname, address: address, email: email, phone:phone}
+            return {...previous, fullname: fullname, email: email, phone:phone}
         });
 
         // 3. go to next section
@@ -55,8 +53,8 @@ export default function Body({activeFormIndex, setActiveFormIndex}) {
                     <CurrentForm 
                         isFirst={isFirstForm} 
                         isLast={isLastForm}
-                        nextFormHandler={nextForm}
-                        prevFormHandler={prevForm}
+                        nextForm={nextForm}
+                        prevForm={prevForm}
                     />
                 </div>
                 <Resume resumeInfo={resumeInfo} />

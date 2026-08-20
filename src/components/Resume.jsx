@@ -3,10 +3,9 @@ import HeaderPreview from "./resume_sections/HeaderPreview";
 import "../styles/resume.css";
 
 export default function Resume({resumeInfo}) {
-    const {fullname, address, email, phone, linkedin, github} = resumeInfo;
+    const {fullname, email, phone, linkedin, github} = resumeInfo;
     const personalInfo = {
         fullname,
-        address,
         email,
         phone
     };
@@ -17,7 +16,9 @@ export default function Resume({resumeInfo}) {
 
     return (
         <div className="resume">
-            <HeaderPreview personalInfo={personalInfo} links={links} />
+            <div className="resume-page">
+                <HeaderPreview personalInfo={personalInfo} links={links} />
+            </div>
         </div>
     );
 }
