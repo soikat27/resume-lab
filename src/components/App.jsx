@@ -2,8 +2,6 @@ import SectionRail from "./SectionRail.jsx";
 import Body from "./Body.jsx";
 
 import "../styles/header.css";
-import "../styles/sections.css";
-import "../styles/inputField.css";
 import "../styles/footer.css";
 import githubIcon from "../assets/icons/github-icon.svg";
 
@@ -11,6 +9,7 @@ import { useState } from "react";
 
 export default function App() {
     const [activeFormIndex, setActiveFormIndex] = useState(0);
+    
     return (
         <div className="main-container">
             <header>

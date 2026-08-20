@@ -1,9 +1,9 @@
 import InputField from "./utils/InputField.jsx";
 import ButtonGroup from "./utils/ButtonGroup.jsx";
 
-export default function Education (props) {
+export default function Education ({addResumeInfo, ...rest}) {
     return (
-        <form className="container education">
+        <form className="container education" onSubmit={addResumeInfo}>
             <h3>Education</h3>
 
             <InputField type="text" name="Institution Name" />
@@ -11,7 +11,7 @@ export default function Education (props) {
             <InputField type="date" name="Start Date" />
             <InputField type="date" name="End Date" />
 
-            <ButtonGroup {...props}/>
+            <ButtonGroup {...rest}/>
         </form>
     );
 }

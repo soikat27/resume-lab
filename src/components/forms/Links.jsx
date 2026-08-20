@@ -1,15 +1,15 @@
 import InputField from "./utils/InputField.jsx";
 import ButtonGroup from "./utils/ButtonGroup.jsx";
 
-export default function Links (props) {
+export default function Links ({addResumeInfo, ...rest}) {
     return (
-        <form className="container links">
+        <form className="container links" onSubmit={addResumeInfo}>
             <h3>Header Links</h3>
 
             <InputField type="url" name="LinkenIn" placeHolder="ex. www.linkedin.com/in/user_name"/>
             <InputField type="url" name="GitHub" placeHolder="ex. www.github.com/user_name"/>
 
-            <ButtonGroup {...props}/>
+            <ButtonGroup {...rest}/>
         </form>
     );
 }

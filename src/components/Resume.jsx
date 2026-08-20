@@ -1,9 +1,23 @@
 import HeaderPreview from "./resume_sections/HeaderPreview";
 
-export default function Resume() {
+import "../styles/resume.css";
+
+export default function Resume({resumeInfo}) {
+    const {fullname, address, email, phone, linkedin, github} = resumeInfo;
+    const personalInfo = {
+        fullname,
+        address,
+        email,
+        phone
+    };
+    const links = {
+        linkedin,
+        github
+    };
+
     return (
         <div className="resume">
-            <HeaderPreview  />
+            <HeaderPreview personalInfo={personalInfo} links={links} />
         </div>
     );
 }

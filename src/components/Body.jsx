@@ -3,6 +3,11 @@ import Links from "./forms/Links.jsx";
 import Education from "./forms/Education.jsx";
 import Experience from "./forms/Experience.jsx";
 import Download from "./forms/Download.jsx";
+import Resume from "./Resume.jsx";
+
+import "../styles/sections.css";
+
+import { useState } from "react";
 
 export default function Body({activeFormIndex, setActiveFormIndex}) {
     const sections = [GeneralInfo, Links, Education, Experience, Download];
@@ -10,11 +15,29 @@ export default function Body({activeFormIndex, setActiveFormIndex}) {
     const isFirstForm = (activeFormIndex === 0) ? true : false;
     const isLastForm = (activeFormIndex === sections.length-1) ? true : false;
 
-    function nextForm() {
+    const [resumeInfo, setResumeInfo] = useState({});
+
+    function nextForm(event) {
+        // 1. prevent submit default -> get form and formData
+        event.preventDefault();
+        const form = event.target;
+        const formData = new FormData(form);
+
+        // 2. populate wih new info
+        setResumeInfo((previous) => {
+            const fullname = formData.get("Full Name");
+            const address = formData.get("Address");
+            const email = formData.get("Email");
+            const phone = formData.get("Phone");
+            return {...previous, fullname: fullname, address: address, email: email, phone:phone}
+        });
+
+        // 3. go to next section
         setActiveFormIndex(Math.min(activeFormIndex+1, sections.length-1));
     }
 
     function prevForm() {
+        // 1. go to previous form
         setActiveFormIndex(Math.max(activeFormIndex-1, 0));
     }
 
@@ -28,12 +51,15 @@ export default function Body({activeFormIndex, setActiveFormIndex}) {
                 <h4>Fill each section, preview on the right, download when you're done. <span className="jake-resume">Inspired from <a href="https://github.com/jakegut/resume">Jake's resume</a>.</span></h4>
             </div>
             <div className="main-body">
-                <CurrentForm 
-                    isFirst={isFirstForm} 
-                    isLast={isLastForm}
-                    nextFormHandler={nextForm}
-                    prevFormHandler={prevForm} 
-                />
+                <div className="form">
+                    <CurrentForm 
+                        isFirst={isFirstForm} 
+                        isLast={isLastForm}
+                        nextFormHandler={nextForm}
+                        prevFormHandler={prevForm}
+                    />
+                </div>
+                <Resume resumeInfo={resumeInfo} />
             </div>
         </main>
     );

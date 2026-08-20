@@ -1,3 +1,5 @@
+import "../../../styles/inputField.css";
+
 export default function InputField({type, name, placeHolder}) {
     return (
         <div className="field">

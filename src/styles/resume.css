@@ -1,0 +1,37 @@
+.header-preview {
+    text-align: center;
+    margin-bottom: 1.5rem;
+}
+
+.header-preview .title p {
+    margin: 0;
+    font-family: var(--font-serif);
+    font-size: 1.75rem;
+    font-weight: 700;
+    letter-spacing: 0.02em;
+    text-transform: uppercase;
+    color: var(--color-fg);
+    line-height: 1.2;
+}
+
+.header-preview .subtitle {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 0.25rem 0.75rem;
+    margin-top: 0.5rem;
+}
+
+.header-preview .subtitle p {
+    margin: 0;
+    font-family: var(--font-sans);
+    font-size: 0.8125rem;
+    color: var(--color-fg);
+    line-height: 1.4;
+}
+
+.header-preview .subtitle p:not(:last-child)::after {
+    content: "|";
+    margin-left: 0.75rem;
+    color: var(--color-muted);
+}
