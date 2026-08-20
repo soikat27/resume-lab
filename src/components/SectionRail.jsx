@@ -1,12 +1,9 @@
-// import { useState } from "react";
-
-export default function SectionRail() {
+export default function SectionRail({activeFormIndex}) {
     const sections = ["General Information", "Links", "Education", "Experience", "Download"];
-    // const [selected, setSelected] = useState(sections[0]);
     
     return (
         <div className="section_rail">
-            {sections.map(sectionName => <div className="rail-item">{sectionName}</div>)}
+            {sections.map((sectionName, index) => <div key={sectionName} className={`rail-item ${(activeFormIndex === index) ? "active" : ""}`}>{sectionName}</div>)}
         </div>
     );
 }

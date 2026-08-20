@@ -4,11 +4,7 @@ import Education from "./forms/Education.jsx";
 import Experience from "./forms/Experience.jsx";
 import Download from "./forms/Download.jsx";
 
-import { useState } from "react";
-
-export default function Body() {
-    const [activeFormIndex, setActiveFormIndex] = useState(0);
-
+export default function Body({activeFormIndex, setActiveFormIndex}) {
     const sections = [GeneralInfo, Links, Education, Experience, Download];
     const CurrentForm = sections[activeFormIndex];
     const isFirstForm = (activeFormIndex === 0) ? true : false;

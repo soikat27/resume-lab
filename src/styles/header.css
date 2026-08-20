@@ -60,7 +60,6 @@ header {
 }
 
 .rail-item {
-    cursor: pointer;
     font-family: var(--font-sans);
     font-size: 0.875rem;
     font-weight: 400;
