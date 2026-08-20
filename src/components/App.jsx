@@ -31,15 +31,24 @@ export default function App() {
                 </div>
             </header>
             <main>
-                <div className="form">
-                    <CurrentSection 
-                        isFirst={isFirstSection} 
-                        isLast={isLastSection} 
-                        onChangeHandler={setActiveSectionIndex} 
-                        lastIndex={sections.length-1} />
+                <div className="main-title">
+                    <div className="title">
+                        <h2>Build your resume in {sections.length} steps.</h2>
+                        <button type="button" className="btn-secondary">Autofill</button>
+                    </div>
+                    <h4>Fill each section, preview on the right, download when you're done. <span className="jake-resume">Inspired from <a href="https://github.com/jakegut/resume">Jake's resume</a>.</span></h4>
                 </div>
-                <div className="resume">
+                <div className="main-body">
+                    <div className="form">
+                        <CurrentSection 
+                            isFirst={isFirstSection} 
+                            isLast={isLastSection} 
+                            onChangeHandler={setActiveSectionIndex} 
+                            lastIndex={sections.length-1} />
+                    </div>
+                    <div className="resume">
                     
+                    </div>
                 </div>
             </main>
             <footer>

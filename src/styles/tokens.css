@@ -44,7 +44,7 @@
     --content-max: 64rem;
     --space-content-x: 4.5rem;
     --space-section-y: 2.5rem;
-    --space-header-y: 0.85rem;
+    --space-header-y: 1.75rem;
     --space-header-x: var(--space-content-x);
 }
 

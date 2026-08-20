@@ -6,9 +6,10 @@ header {
 }
 
 .header-inner {
-    display: grid;
-    grid-template-columns: 1fr auto 1fr;
+    display: flex;
+    justify-content: space-between;
     align-items: center;
+    gap: 1.5rem;
     max-width: var(--content-max);
     width: 100%;
     margin-inline: auto;
@@ -16,48 +17,57 @@ header {
 }
 
 .brand {
-    justify-self: start;
+    flex-shrink: 0;
     display: flex;
     align-items: baseline;
-    line-height: 1;
+    line-height: 1.15;
 }
 
 .brand-resume {
     font-family: var(--font-serif);
     font-style: italic;
     font-weight: 400;
-    font-size: 1.2rem;
+    font-size: 1.15rem;
     letter-spacing: -0.01em;
     color: var(--color-muted);
 }
 
 .brand-lab {
     font-family: var(--font-sans);
-    font-weight: 700;
-    font-size: 1.2rem;
+    font-weight: 800;
+    font-size: 1.25rem;
     letter-spacing: -0.04em;
     color: var(--color-fg);
 }
 
 .section_rail {
-    grid-column: 2;
-    justify-self: center;
     display: flex;
     align-items: center;
     gap: 2rem;
-    max-width: 100%;
-    overflow-x: auto;
+    flex-shrink: 0;
+}
+
+@media (max-width: 768px) {
+    .header-inner {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .section_rail {
+        width: 100%;
+        overflow-x: auto;
+    }
 }
 
 .rail-item {
     cursor: pointer;
     font-family: var(--font-sans);
-    font-size: 0.9375rem;
-    font-weight: 500;
-    letter-spacing: 0.03em;
-    padding-bottom: 0.4rem;
+    font-size: 0.875rem;
+    font-weight: 400;
+    letter-spacing: 0.04em;
+    padding-bottom: 0.35rem;
     color: var(--color-nav);
-    border-bottom: 2px solid transparent;
+    border-bottom: 1.5px solid transparent;
     white-space: nowrap;
 }
 
@@ -67,6 +77,6 @@ header {
 
 .rail-item.active {
     color: var(--color-fg);
-    font-weight: 650;
+    font-weight: 500;
     border-bottom-color: var(--color-fg);
 }
