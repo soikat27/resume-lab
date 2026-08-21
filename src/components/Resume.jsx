@@ -1,4 +1,5 @@
 import HeaderPreview from "./resume_sections/HeaderPreview";
+import EducationPreview from "./resume_sections/EducationPreview";
 
 import "../styles/resume.css";
 
@@ -14,10 +15,12 @@ export default function Resume({resumeInfo}) {
         github
     };
 
+
     return (
         <div className="resume">
             <div className="resume-page">
                 <HeaderPreview personalInfo={personalInfo} links={links} />
+                <EducationPreview educations={resumeInfo.education}/>
             </div>
         </div>
     );

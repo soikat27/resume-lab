@@ -15,7 +15,7 @@ export default function EducationChunk({id, count, deleteEducation}) {
                 <InputField type="text" name="Degree" />
                 <InputField type="text" name="Location" />
                 <InputField type="month" name="Start Date" />
-                <InputField type="month" name="End Date" />
+                <InputField type="month" name="End Date (Actual or Expected)" />
             </div>  
         </div>
     );
