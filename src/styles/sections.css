@@ -121,6 +121,114 @@ main {
     border-bottom: 1px solid var(--color-rule-soft);
 }
 
+.form-title {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 0.75rem;
+    padding-bottom: 0.75rem;
+    border-bottom: 1px solid var(--color-rule-soft);
+}
+
+.form-title h3 {
+    margin: 0;
+    padding-bottom: 0;
+    border-bottom: none;
+}
+
+.btn-add {
+    flex-shrink: 0;
+    box-sizing: border-box;
+    width: 1.5rem;
+    height: 1.5rem;
+    padding: 0;
+    padding-bottom: 0.125rem;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    border: 1px solid var(--color-fg);
+    background: var(--color-bg);
+    color: var(--color-fg);
+    font-family: var(--font-sans);
+    font-size: 1rem;
+    font-weight: 600;
+    line-height: 1;
+    cursor: pointer;
+    transition: background-color 0.15s ease, color 0.15s ease;
+}
+
+.btn-add:hover {
+    background: var(--color-fg);
+    color: var(--color-bg);
+}
+
+.btn-add:focus-visible {
+    outline: 2px solid var(--color-fg);
+    outline-offset: 2px;
+}
+
+.edu-chunk {
+    display: flex;
+    flex-direction: column;
+    gap: 0.75rem;
+    padding-top: 0.75rem;
+}
+
+.edu-chunk + .edu-chunk {
+    margin-top: 0.5rem;
+    border-top: 1px solid var(--color-rule-soft);
+}
+
+.edu-chunk-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 0.75rem;
+}
+
+.edu-chunk-title {
+    margin: 0;
+    font-family: var(--font-sans);
+    font-size: 0.8125rem;
+    font-weight: 600;
+    letter-spacing: 0.02em;
+    color: var(--color-fg);
+}
+
+.btn-delete {
+    flex-shrink: 0;
+    box-sizing: border-box;
+    width: 1.5rem;
+    height: 1.5rem;
+    padding: 0;
+    padding-bottom: 0.125rem;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    border: 1px solid var(--color-danger);
+    background: var(--color-bg);
+    color: var(--color-danger);
+    font-family: var(--font-sans);
+    font-size: 1rem;
+    font-weight: 600;
+    line-height: 1;
+    cursor: pointer;
+    transition: background-color 0.15s ease, color 0.15s ease, border-color 0.15s ease;
+}
+
+.btn-delete:hover {
+    background: var(--color-danger-soft);
+    border-color: var(--color-danger);
+    color: var(--color-danger);
+}
+
+.btn-delete:focus-visible {
+    outline: 2px solid var(--color-danger);
+    outline-offset: 2px;
+}
+
 .buttons {
     display: flex;
     margin-top: 0.5rem;

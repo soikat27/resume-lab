@@ -40,6 +40,8 @@
     --color-nav: #333;
     --color-rule: #111;
     --color-rule-soft: rgba(0, 0, 0, 0.08);
+    --color-danger: #a85a5a;
+    --color-danger-soft: rgba(168, 90, 90, 0.12);
 
     --content-max: 72rem;
     --space-content-x: 4.5rem;
