@@ -17,20 +17,13 @@ export default function Body({activeFormIndex, setActiveFormIndex}) {
 
     const [resumeInfo, setResumeInfo] = useState({});
 
-    function nextForm(event) {
-        // 1. get form data
-        const form = event.target;
-        const formData = new FormData(form);
-
-        // 2. populate wih new info
+    function updateOnNext(newData) {
+        // 1. populate wih new info
         setResumeInfo((previous) => {
-            const fullname = formData.get("Full Name");
-            const email = formData.get("Email");
-            const phone = formData.get("Phone");
-            return {...previous, fullname: fullname, email: email, phone:phone}
+            return {...previous, ...newData};
         });
 
-        // 3. go to next section
+        // 2. go to next section
         setActiveFormIndex(Math.min(activeFormIndex+1, sections.length-1));
     }
 
@@ -53,7 +46,7 @@ export default function Body({activeFormIndex, setActiveFormIndex}) {
                     <CurrentForm 
                         isFirst={isFirstForm} 
                         isLast={isLastForm}
-                        nextForm={nextForm}
+                        updateOnNext={updateOnNext}
                         prevForm={prevForm}
                     />
                 </div>

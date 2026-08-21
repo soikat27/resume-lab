@@ -1,26 +1,32 @@
 import InputField from "./utils/InputField";
 import ButtonGroup from "./utils/ButtonGroup";
 
-export default function GeneralInfo({nextForm, ...rest}) {
-    function toNextForm(event) {
+export default function GeneralInfo({updateOnNext, ...rest}) {
+    function nextForm(event) {
         // 0. prevent form from submitting
         event.preventDefault();
 
         const form = event.currentTarget;
-        // 1. set custom validity
+        // 1. set custom validity -> validate current form
         nameValidity(form.elements["Full Name"]);
         emailValidity(form.elements["Email"]);
         phoneValidity(form.elements["Phone"]);
 
-        // 2. validate current form
-        
         if (!form.checkValidity()) {
             form.reportValidity();
             return;
         }
 
-        // 3. if success: go to next form
-        nextForm(event);
+        // 2. get newData from the form inputs
+        const formData = new FormData(form);
+        const newData = {
+            fullname: formData.get("Full Name"),
+            email: formData.get("Email"),
+            phone: formData.get("Phone"),
+        };
+
+        // 3. update states in parent component
+        updateOnNext(newData);
     }
 
     function nameValidity(input) {
@@ -60,7 +66,7 @@ export default function GeneralInfo({nextForm, ...rest}) {
     }
 
     return (
-        <form className="container gen_info" onSubmit={toNextForm} noValidate>
+        <form className="container gen_info" onSubmit={nextForm} noValidate>
             <h3>General Information</h3>
 
             <InputField type="text" name="Full Name" placeHolder="ex. John Ryan" />
