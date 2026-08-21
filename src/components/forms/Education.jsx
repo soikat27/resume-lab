@@ -1,6 +1,7 @@
 import EducationChunk from "./utils/EducationChunk.jsx";
 import ButtonGroup from "./utils/ButtonGroup.jsx";
 import { useState } from "react";
+import {parse, isBefore, format} from "date-fns";
 
 export default function Education ({updateOnNext, ...rest}) {
     const [educationIds, setEducationIds] = useState([]);
@@ -10,8 +11,20 @@ export default function Education ({updateOnNext, ...rest}) {
         event.preventDefault();
 
         const form = event.currentTarget;
+        // check if list or single element
         // 1. set custom validity -> validate current form
-        inputValidity(form.elements["Institution Name"], form.elements["Degree"], form.elements["Location"], form.elements["Start Date"], form.elements["End Date (Actual or Expected)"]);
+        if (form.elements["Institution Name"].length === undefined)
+            inputValidity(form.elements["Institution Name"], form.elements["Degree"], form.elements["Location"], form.elements["Start Date"], form.elements["End Date (Actual or Expected)"]);
+        else {
+            const nameInputs = [...form.elements["Institution Name"]];
+            const degreeInputs = [...form.elements["Degree"]];
+            const locationInputs = [...form.elements["Location"]];
+            const startInputs = [...form.elements["Start Date"]];
+            const endInputs = [...form.elements["End Date (Actual or Expected)"]];
+
+            for (let i = 0; i < nameInputs.length; i++)
+                inputValidity(nameInputs[i], degreeInputs[i], locationInputs[i], startInputs[i], endInputs[i]);
+        }
 
         if (!form.checkValidity()) {
             form.reportValidity();
@@ -28,12 +41,15 @@ export default function Education ({updateOnNext, ...rest}) {
 
         const educations = [];
         for (let i = 0; i < names.length; i++) {
+            const startDate = parse(starts[i], "yyyy-MM", new Date());
+            const endDate = parse(ends[i], "yyyy-MM", new Date());
+
             const entry = {
                 name: names[i],
                 degree: degrees[i],
                 location: locations[i],
-                start: starts[i],
-                end: ends[i]
+                start: format(startDate, "MMM yyyy"),
+                end: format(endDate, "MMM yyyy")   
             };
             educations.push(entry);
         }
@@ -61,13 +77,17 @@ export default function Education ({updateOnNext, ...rest}) {
             degree.setCustomValidity("Please write your degree name.");
         else if (location.value.trim() === "")
             location.setCustomValidity("Institution location is required!");
-        else if (start.value.trim() === "")
+        else if (start.value === "")
             start.setCustomValidity("Please enter a start date.");
-        else if (end.value.trim() === "")
-            end.setCustomValidity("Please enter your actual/anticipated end date.");  
+        else if (end.value === "")
+            end.setCustomValidity("Please enter your actual/anticipated end date.");
+        else {
+            const startDate = parse(start.value, "yyyy-MM", new Date());
+            const endDate = parse(end.value.trim(), "yyyy-MM", new Date());
+            if (isBefore(startDate, endDate) === false)
+                end.setCustomValidity("End date cannot be before start date!");
+        } 
     }
-
-
 
     function addEducation() {
         setEducationIds(previous => [...previous, crypto.randomUUID()]);

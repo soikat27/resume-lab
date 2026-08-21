@@ -1,7 +1,7 @@
 export default function EducationPreview ({educations}) {
     if (!educations)
         return;
-    
+
     return (
         <div className="education-preview">
             {(educations.length > 0) && <div className="heading">Education</div> }
