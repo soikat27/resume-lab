@@ -2,10 +2,10 @@ import InputField from "./utils/InputField.jsx";
 import ButtonGroup from "./utils/ButtonGroup.jsx";
 import { useState } from "react";
 
-export default function Links ({setResumeData, goToNextForm, goToPrevForm}) {
-    const [linkedin, setLinkedin] = useState("");
-    const [github, setGithub] = useState("");
-    const [isSaved, setIsSaved] = useState(false);
+export default function Links ({resumeData, setResumeData, goToNextForm, goToPrevForm}) {
+    const [linkedin, setLinkedin] = useState((resumeData.linkedin !== undefined) ? resumeData.linkedin : "");
+    const [github, setGithub] = useState((resumeData.github !== undefined) ? resumeData.github : "");
+    const [canEdit, setCanEdit] = useState(resumeData.linkedin === undefined);
 
     function handleSaveNext(event) {
         // 0. prevent the form from submitting
@@ -21,13 +21,12 @@ export default function Links ({setResumeData, goToNextForm, goToPrevForm}) {
             return;
         }
 
-        // 2. update states: parent component
-        setIsSaved(true);
+        // 2. update resume data and go to next form
         const newData = {
             linkedin,
             github
         }
-        setResumeData(previous => ({...previous, ...newData}));
+        setResumeData({...resumeData, ...newData});
         goToNextForm();
     }
 
@@ -47,15 +46,15 @@ export default function Links ({setResumeData, goToNextForm, goToPrevForm}) {
         <form className="container links" onSubmit={handleSaveNext} noValidate>
             <h3>Header Links</h3>
 
-            <InputField type="text" name="LinkedIn" placeHolder="ex. www.linkedin.com/in/user_name" value={linkedin} setValue={setLinkedin} isSaved={isSaved} />
-            <InputField type="text" name="GitHub" placeHolder="ex. www.github.com/user_name" value={github} setValue={setGithub} isSaved={isSaved} />
+            <InputField type="text" name="LinkedIn" placeHolder="ex. www.linkedin.com/in/user_name" value={linkedin} setValue={setLinkedin} canEdit={canEdit} />
+            <InputField type="text" name="GitHub" placeHolder="ex. www.github.com/user_name" value={github} setValue={setGithub} canEdit={canEdit} />
 
             <ButtonGroup 
                 hasPrev={true}
-                hasEdit={isSaved}
+                hasEdit={!canEdit}
                 hasNext={true}
-                prevHandler={goToPrevForm}
-                editHandler={setIsSaved}
+                handlerPrev={goToPrevForm}
+                setCanEdit={setCanEdit}
             />
         </form>
     );

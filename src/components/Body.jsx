@@ -7,7 +7,6 @@ import { useState } from "react";
 export default function Body({formInfo, goToNextForm, goToPrevForm}) {
     const Form = formInfo.currentForm;
 
-    
     const [resumeData, setResumeData] = useState({});
 
     return (
@@ -21,7 +20,8 @@ export default function Body({formInfo, goToNextForm, goToPrevForm}) {
             </div>
             <div className="main-body">
                 <div className="form">
-                    <Form 
+                    <Form
+                        resumeData={resumeData}
                         setResumeData={setResumeData}
                         goToNextForm={goToNextForm}
                         goToPrevForm={goToPrevForm}

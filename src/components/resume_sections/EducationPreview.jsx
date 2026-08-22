@@ -10,15 +10,15 @@ export default function EducationPreview ({educations}) {
                 return (
                     <div className="education-item">
                         <div className="first-line">
-                            {education.name && <p className="edu-name">{education.name}</p>}
+                            {education.institution && <p className="edu-name">{education.institution}</p>}
                             {education.location && <p className="edu-location">{education.location}</p>}
                         </div>
                         <div className="last-line">
                             {education.degree && <p className="edu-degree">{education.degree}</p>}
                             <div className="edu-date">
-                                {education.start && <p className="edu-start">{education.start}</p>}
+                                {education.startDate && <p className="edu-start">{education.startDate}</p>}
                                 –
-                                {education.start && <p className="edu-end">{education.end}</p>}
+                                {education.endDate && <p className="edu-end">{education.endDate}</p>}
                             </div>
                             
                         </div>

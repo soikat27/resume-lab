@@ -1,6 +1,6 @@
 import "../../../styles/inputField.css";
 
-export default function InputField({type, name, placeHolder, value, setValue, isSaved}) {
+export default function InputField({type, name, placeHolder, value, setValue, canEdit}) {
     function handleSetValue(event) {
         // 1. reset custom validity
         const input = event.target;
@@ -20,7 +20,7 @@ export default function InputField({type, name, placeHolder, value, setValue, is
                 value={value}
                 placeholder={placeHolder} 
                 onChange={handleSetValue}
-                readOnly={isSaved}
+                readOnly={!canEdit}
             />
         </div>
     );

@@ -2,11 +2,11 @@ import InputField from "./utils/InputField";
 import ButtonGroup from "./utils/ButtonGroup";
 import { useState } from "react";
 
-export default function GeneralInfo({setResumeData, goToNextForm, goToPrevForm}) {
-    const [name, setName] = useState("");
-    const [email, setEmail] = useState("");
-    const [phone, setPhone] = useState("");
-    const [isSaved, setIsSaved] = useState(false);
+export default function GeneralInfo({resumeData, setResumeData, goToNextForm, goToPrevForm}) {
+    const [name, setName] = useState((resumeData.name !== undefined) ? resumeData.name : "");
+    const [email, setEmail] = useState((resumeData.email !== undefined) ? resumeData.email : "");
+    const [phone, setPhone] = useState((resumeData.phone !== undefined) ? resumeData.phone : "");
+    const [canEdit, setCanEdit] = useState(resumeData.name === undefined);
 
     function handleSaveNext(event) {
         // 0. prevent the form from submitting
@@ -23,15 +23,14 @@ export default function GeneralInfo({setResumeData, goToNextForm, goToPrevForm})
             return;
         }
 
-        // 2. update states: parent component and go to next form
-        setIsSaved(true);
+        // 2. update resume data and go to next form
         const newData = {
             name,
             email,
             phone
         }
         
-        setResumeData(previous => ({...previous, ...newData}));
+        setResumeData({...resumeData, ...newData});
         goToNextForm();
     }
 
@@ -61,16 +60,16 @@ export default function GeneralInfo({setResumeData, goToNextForm, goToPrevForm})
         <form className="container gen_info" onSubmit={handleSaveNext} noValidate>
             <h3>General Information</h3>
 
-            <InputField type="text" name="Full Name" placeHolder="ex. John Ryan" value={name} setValue={setName} isSaved={isSaved} />
-            <InputField type="email" name="Email" placeHolder="ex. your_email@company.xyz" value={email} setValue={setEmail} isSaved={isSaved} />
-            <InputField type="tel" name="Phone" placeHolder="ex. (xxx) xxx-xxxx" value={phone} setValue={setPhone} isSaved={isSaved} />
+            <InputField type="text" name="Full Name" placeHolder="ex. John Ryan" value={name} setValue={setName} canEdit={canEdit} />
+            <InputField type="email" name="Email" placeHolder="ex. your_email@company.xyz" value={email} setValue={setEmail} canEdit={canEdit} />
+            <InputField type="tel" name="Phone" placeHolder="ex. (xxx) xxx-xxxx" value={phone} setValue={setPhone} canEdit={canEdit} />
 
             <ButtonGroup 
                 hasPrev={false}
-                hasEdit={isSaved}
+                hasEdit={!canEdit}
                 hasNext={true}
-                prevHandler={goToPrevForm}
-                editHandler={setIsSaved}
+                handlePrev={goToPrevForm}
+                setCanEdit={setCanEdit}
             />
         </form>
     );

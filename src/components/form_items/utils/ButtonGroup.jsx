@@ -1,7 +1,6 @@
-export default function ButtonGroup({hasPrev, hasEdit, hasNext, prevHandler, editHandler}) { 
-    function enableEdit() {
-        if (hasEdit === true) // if editButton -> form is saved
-            editHandler(false);
+export default function ButtonGroup({hasPrev, hasEdit, hasNext, handlerPrev, setCanEdit}) { 
+    function handleEdit() {
+        setCanEdit(true);
     }
     
     return (
@@ -11,7 +10,7 @@ export default function ButtonGroup({hasPrev, hasEdit, hasNext, prevHandler, edi
                     <button 
                         className="btn-prev" 
                         type="button" 
-                        onClick={prevHandler}
+                        onClick={handlerPrev}
                     >
                         previous
                     </button>
@@ -22,7 +21,7 @@ export default function ButtonGroup({hasPrev, hasEdit, hasNext, prevHandler, edi
                     <button 
                         className="btn-edit" 
                         type="button" 
-                        onClick={enableEdit}
+                        onClick={handleEdit}
                     >
                         Edit
                     </button>
