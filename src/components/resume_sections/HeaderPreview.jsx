@@ -2,7 +2,7 @@ export default function HeaderPreview ({personalInfo, links}) {
     return (
         <div className="header-preview">
             <div className="title">
-                {personalInfo.fullname && <p className="item large">{personalInfo.fullname}</p>}
+                {personalInfo.name && <p className="item large">{personalInfo.name}</p>}
             </div>
             <div className="subtitle">
                 {personalInfo.phone && <p className="item regular">{personalInfo.phone}</p>}

@@ -44,3 +44,10 @@
     outline: 2px solid var(--color-fg);
     outline-offset: 1px;
 }
+
+.field input:read-only {
+    background: rgba(0, 0, 0, 0.04);
+    border-color: rgba(0, 0, 0, 0.12);
+    color: var(--color-muted);
+    cursor: default;
+}

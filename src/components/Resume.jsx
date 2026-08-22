@@ -4,9 +4,9 @@ import EducationPreview from "./resume_sections/EducationPreview";
 import "../styles/resume.css";
 
 export default function Resume({resumeInfo}) {
-    const {fullname, email, phone, linkedin, github} = resumeInfo;
+    const {name, email, phone, linkedin, github} = resumeInfo;
     const personalInfo = {
-        fullname,
+        name,
         email,
         phone
     };

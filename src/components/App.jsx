@@ -1,5 +1,10 @@
 import SectionRail from "./SectionRail.jsx";
 import Body from "./Body.jsx";
+import GeneralInfo from "./form_items/GeneralInfo.jsx";
+import Links from "./form_items/Links.jsx";
+import Education from "./form_items/Education.jsx";
+import Experience from "./form_items/Experience.jsx";
+import Download from "./form_items/Download.jsx";
 
 import "../styles/header.css";
 import "../styles/footer.css";
@@ -9,7 +14,17 @@ import { useState } from "react";
 
 export default function App() {
     const [activeFormIndex, setActiveFormIndex] = useState(0);
-    
+
+    const forms = [GeneralInfo, Links, Education, Experience, Download];
+    const CurrentForm = forms[activeFormIndex];
+
+    function goToNextForm() {
+        setActiveFormIndex(Math.min(activeFormIndex+1, forms.length-1));
+    }
+    function goToPrevForm() {
+        setActiveFormIndex(Math.max(activeFormIndex-1, 0));
+    }
+
     return (
         <div className="main-container">
             <header>
@@ -23,8 +38,9 @@ export default function App() {
             </header>
 
             <Body 
-                activeFormIndex={activeFormIndex}
-                setActiveFormIndex={setActiveFormIndex}
+                formInfo={{currentFormIndex: activeFormIndex, currentForm: CurrentForm, totalForms: forms.length}}
+                goToNextForm={goToNextForm}
+                goToPrevForm={goToPrevForm}
             />
 
             <footer>

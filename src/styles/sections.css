@@ -168,16 +168,22 @@ main {
     outline-offset: 2px;
 }
 
-.edu-chunk {
+.education .education-item {
     display: flex;
     flex-direction: column;
     gap: 0.75rem;
     padding-top: 0.75rem;
 }
 
-.edu-chunk + .edu-chunk {
+.education .education-item + .education-item {
     margin-top: 0.5rem;
     border-top: 1px solid var(--color-rule-soft);
+}
+
+.education .inputs {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
 }
 
 .edu-chunk-header {
@@ -235,6 +241,13 @@ main {
     justify-content: space-between;
 }
 
+.buttons .left,
+.buttons .right {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
 .buttons button {
     font-family: var(--font-sans);
     font-size: 0.875rem;
@@ -264,8 +277,20 @@ main {
     border-color: #333;
 }
 
-.buttons .btn-prev:hover {
+.buttons .btn-prev:hover,
+.buttons .btn-edit:hover {
     background: rgba(0, 0, 0, 0.04);
+}
+
+.buttons .btn-download {
+    background: var(--color-fg);
+    color: var(--color-bg);
+    border-color: var(--color-fg);
+}
+
+.buttons .btn-download:hover {
+    background: #333;
+    border-color: #333;
 }
 
 .btn-secondary {
