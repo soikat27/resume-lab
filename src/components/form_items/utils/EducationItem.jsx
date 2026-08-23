@@ -5,13 +5,7 @@ export default function EducationItem({id, educationNo, institution, degree, loc
         <div className="education-item" id={id}>
             <div className="edu-chunk-header">
                 <p className="edu-chunk-title">Add education {educationNo}</p>
-                <button 
-                    type="button" 
-                    className="btn-delete" 
-                    onClick={() => {handleDelete(id);}}
-                >
-                    –
-                </button>
+                <button type="button" className="btn-delete" onClick={() => {handleDelete(id);}}>–</button>
             </div>
 
             <div className="inputs">

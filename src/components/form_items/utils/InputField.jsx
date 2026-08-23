@@ -13,15 +13,18 @@ export default function InputField({type, name, placeHolder, value, setValue, ca
     return (
         <div className="field">
             <label htmlFor={name}>{name}:</label>
-            <input 
-                type={type} 
-                name={name} 
-                id={name}
-                value={value}
-                placeholder={placeHolder} 
-                onChange={handleSetValue}
-                readOnly={!canEdit}
-            />
+            {type === "textarea" && <textarea name={name} id={name} value={value} placeholder={placeHolder} onChange={handleSetValue} readOnly={!canEdit} />}
+            {type !== "textarea" && 
+                <input 
+                    type={type} 
+                    name={name} 
+                    id={name}
+                    value={value}
+                    placeholder={placeHolder} 
+                    onChange={handleSetValue}
+                    readOnly={!canEdit}
+                />
+            }
         </div>
     );
 }
