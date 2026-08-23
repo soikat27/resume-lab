@@ -20,8 +20,10 @@ export default function ExperienceItem({id, experienceNo, position, company, loc
                         duties.map((duty, index) => {
                             return (
                                 <div className="duty-item" id={duty.id}>
-                                    <button type="button" className="btn-delete" onClick={() => {handleDeleteDuty(id, duty.id)}}>–</button>
-                                    <InputField type="textarea" name={"Job Responsibility " + (index+1)} placeHolder="ex. Programmed a prototype that simulates humans living on the planet Jupiter." value={duty.string} setValue={(text) => {handleSetTextAreaValue(id, duty.id, text)}} canEdit={canEdit} />
+                                    {
+                                        (index !== 0 && <button type="button" className="btn-delete" onClick={() => {handleDeleteDuty(id, duty.id)}}>–</button>)
+                                    }
+                                    <InputField type="textarea" name={"Duty " + (index+1)} placeHolder="ex. Programmed a prototype that simulates humans living on the planet Jupiter." value={duty.string} setValue={(text) => {handleSetTextAreaValue(id, duty.id, text)}} canEdit={canEdit} />
                                 </div>  
                             );
                         }) 
