@@ -27,7 +27,7 @@ export default function Body({formInfo, goToNextForm, goToPrevForm}) {
                         goToPrevForm={goToPrevForm}
                     />
                 </div>
-                <Resume resumeInfo={resumeData} />
+                <Resume resumeData={resumeData} />
             </div>
         </main>
     );

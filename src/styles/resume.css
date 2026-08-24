@@ -153,3 +153,85 @@
     text-align: right;
 }
 
+/* ----- Experience (Jake two-line subheading + bullets) ----- */
+
+.experience-preview {
+    margin-top: 0.65em;
+}
+
+.experience-preview .heading {
+    margin: 0 0 0.35em;
+    padding-bottom: 0.12em;
+    font-family: var(--font-serif);
+    font-size: var(--resume-large);
+    font-weight: 400;
+    font-variant: small-caps;
+    letter-spacing: 0.06em;
+    text-align: left;
+    color: var(--color-fg);
+    border-bottom: 1px solid var(--color-fg);
+    line-height: 1.2;
+}
+
+.experience-preview .experience-item {
+    display: flex;
+    flex-direction: column;
+    gap: 0.05em;
+    margin-top: 0.45em;
+    font-size: 1em;
+}
+
+.experience-preview .first-line,
+.experience-preview .last-line {
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+    gap: 0.75em;
+}
+
+.experience-preview .exp-name,
+.experience-preview .exp-start,
+.experience-preview .exp-end,
+.experience-preview .edu-date,
+.experience-preview .edu-degree,
+.experience-preview .edu-location {
+    margin: 0;
+}
+
+.experience-preview .exp-name {
+    font-weight: 700;
+}
+
+.experience-preview .edu-date {
+    display: flex;
+    flex-shrink: 0;
+    align-items: baseline;
+    gap: 0.25em;
+    white-space: nowrap;
+    text-align: right;
+}
+
+.experience-preview .edu-degree,
+.experience-preview .edu-location {
+    font-size: var(--resume-small);
+    font-style: italic;
+}
+
+.experience-preview .edu-location {
+    text-align: right;
+}
+
+.experience-preview .duties ul {
+    margin: 0.2em 0 0.1em;
+    padding-left: 1.1em;
+    font-size: var(--resume-small);
+}
+
+.experience-preview .duties li {
+    margin-bottom: 0.12em;
+}
+
+.experience-preview .duties li::marker {
+    font-size: 0.65em;
+}
+

@@ -17,7 +17,7 @@ export default function Experience({resumeData, setResumeData, goToNextForm, goT
             const positionInput = experienceItem.querySelector('[name="Position Title"]');
             const companyInput = experienceItem.querySelector('[name="Company Name"]');
             const locationInput = experienceItem.querySelector('[name="Location"]');
-            const duty1Input = experienceItem.querySelector('[name="Job Responsibility 1"]');
+            const duty1Input = experienceItem.querySelector('[name="Duty 1"]');
             const startDateInput = experienceItem.querySelector('[name="Start Date"]');
             const endDateInput = experienceItem.querySelector('[name="End Date (Actual or Expected)"]');
 
