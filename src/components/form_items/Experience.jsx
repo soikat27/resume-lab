@@ -5,7 +5,7 @@ import ExperienceItem from "./utils/ExperienceItem.jsx";
 
 export default function Experience({resumeData, setResumeData, goToNextForm, goToPrevForm}) {
     const [experienceItems, setExperienceItems] = useState((resumeData.experience !== undefined) ? resumeData.experience : []);
-    const [canEdit, setCanEdit] = useState(resumeData.experience === undefined);
+    const [canEdit, setCanEdit] = useState(resumeData.experience === undefined || resumeData.experience.length ===0);
 
     function handleSaveNext(event) {
         // 0. prevent the form from submitting

@@ -5,7 +5,7 @@ import EducationItem from "./utils/EducationItem.jsx";
 
 export default function Education ({resumeData, setResumeData, goToNextForm, goToPrevForm}) {
     const [educationItems, setEducationItems] = useState((resumeData.education !== undefined) ? resumeData.education : []);
-    const [canEdit, setCanEdit] = useState(resumeData.education === undefined);
+    const [canEdit, setCanEdit] = useState(resumeData.education === undefined || resumeData.education.length === 0);
 
     function handleSaveNext(event) {
         // 0. prevent the form from submitting

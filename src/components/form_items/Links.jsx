@@ -5,7 +5,7 @@ import { useState } from "react";
 export default function Links ({resumeData, setResumeData, goToNextForm, goToPrevForm}) {
     const [linkedin, setLinkedin] = useState((resumeData.linkedin !== undefined) ? resumeData.linkedin : "");
     const [github, setGithub] = useState((resumeData.github !== undefined) ? resumeData.github : "");
-    const [canEdit, setCanEdit] = useState(resumeData.linkedin === undefined);
+    const [canEdit, setCanEdit] = useState(resumeData.linkedin === undefined || (resumeData.linkedin.length === 0 && resumeData.github.length === 0));
 
     function handleSaveNext(event) {
         // 0. prevent the form from submitting
