@@ -1,26 +1,11 @@
 import ButtonGroup from "./utils/ButtonGroup.jsx";
 import { useState } from "react";
-import {parse, isBefore, format} from "date-fns";
+import {parse, isBefore} from "date-fns";
 import EducationItem from "./utils/EducationItem.jsx";
 
 export default function Education ({resumeData, setResumeData, goToNextForm, goToPrevForm}) {
-    const [educationItems, setEducationItems] = useState(retrieveEducation());
+    const [educationItems, setEducationItems] = useState((resumeData.education !== undefined) ? resumeData.education : []);
     const [canEdit, setCanEdit] = useState(resumeData.education === undefined || resumeData.education.length === 0);
-
-    function retrieveEducation() {
-        if (resumeData.education === undefined)
-            return [];
-
-        const formatedEducation = resumeData.education.map(eduItem => {
-            const copy = {...eduItem};
-            const startDateObj = parse(copy.startDate, "MMM yyyy", new Date());
-            const endDateObj = parse(copy.endDate, "MMM yyyy", new Date());
-            copy.startDate = format(startDateObj, "yyyy-MM");
-            copy.endDate = format(endDateObj, "yyyy-MM");
-            return copy;
-        });
-        return formatedEducation;
-    }
 
     function handleSaveNext(event) {
         // 0. prevent the form from submitting
@@ -44,15 +29,7 @@ export default function Education ({resumeData, setResumeData, goToNextForm, goT
         }
 
         // 2. update resume data and go to next form
-        const newData = educationItems.map(educationItem => {
-            const startDate = parse(educationItem.startDate, "yyyy-MM", new Date());
-            const formatedStartDate = format(startDate, "MMM yyyy");
-            const endDate = parse(educationItem.endDate, "yyyy-MM", new Date());
-            const formatedEndDate = format(endDate, "MMM yyyy");
-
-            return {...educationItem, startDate: formatedStartDate, endDate: formatedEndDate};
-        });
-        setResumeData({ ...resumeData, education: newData});
+        setResumeData({ ...resumeData, education: educationItems});
         goToNextForm();
     }
 

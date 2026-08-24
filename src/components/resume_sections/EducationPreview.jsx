@@ -1,6 +1,13 @@
+import {parse, format} from "date-fns";
+
 export default function EducationPreview ({educations}) {
     if (!educations)
         return;
+
+    function formatedDate(dateString) {
+        const dateObj = parse(dateString, "yyyy-MM", new Date());
+        return format(dateObj, "MMM yyyy");
+    }
 
     return (
         <div className="education-preview">
@@ -16,9 +23,9 @@ export default function EducationPreview ({educations}) {
                         <div className="last-line">
                             {education.degree && <p className="edu-degree">{education.degree}</p>}
                             <div className="edu-date">
-                                {education.startDate && <p className="edu-start">{education.startDate}</p>}
+                                {education.startDate && <p className="edu-start">{formatedDate(education.startDate)}</p>}
                                 –
-                                {education.endDate && <p className="edu-end">{education.endDate}</p>}
+                                {education.endDate && <p className="edu-end">{formatedDate(education.endDate)}</p>}
                             </div>
                             
                         </div>
