@@ -177,6 +177,14 @@ main {
     outline-offset: 2px;
 }
 
+.btn-add:disabled,
+.btn-add:disabled:hover {
+    opacity: 0.4;
+    cursor: not-allowed;
+    background: var(--color-bg);
+    color: var(--color-fg);
+}
+
 .education .education-item,
 .experience .experience-item {
     display: flex;
@@ -279,6 +287,15 @@ main {
 .btn-delete:focus-visible {
     outline: 2px solid var(--color-danger);
     outline-offset: 2px;
+}
+
+.btn-delete:disabled,
+.btn-delete:disabled:hover {
+    opacity: 0.4;
+    cursor: not-allowed;
+    background: var(--color-bg);
+    border-color: var(--color-danger);
+    color: var(--color-danger);
 }
 
 .buttons {

@@ -96,7 +96,8 @@ export default function Education ({resumeData, setResumeData, goToNextForm, goT
                 <h3>Education</h3>
                 <button 
                     type="button" 
-                    className="btn-add" 
+                    className="btn-add"
+                    disabled={!canEdit}
                     onClick={handleAddEducation}
                 >
                     +

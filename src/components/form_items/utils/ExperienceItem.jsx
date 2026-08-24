@@ -5,7 +5,7 @@ export default function ExperienceItem({id, experienceNo, position, company, loc
         <div className="experience-item" id={id}>
             <div className="exp-chunk-header">
                 <p className="exp-chunk-title">Add Experience {experienceNo}</p>
-                <button type="button" className="btn-delete" onClick={() => {handleDeleteExperience(id);}}>–</button>
+                <button type="button" className="btn-delete" disabled={!canEdit} onClick={() => {handleDeleteExperience(id);}}>–</button>
             </div>
 
             <div className="inputs">
@@ -15,13 +15,13 @@ export default function ExperienceItem({id, experienceNo, position, company, loc
 
                 <div className="duties">
                     <p>Add Job responsibilities</p>
-                    <button type="button" className="btn-add" onClick={() => {handleAddDuty(id);}}>+</button>
+                    <button type="button" className="btn-add" disabled={!canEdit} onClick={() => {handleAddDuty(id);}}>+</button>
                     {
                         duties.map((duty, index) => {
                             return (
                                 <div className="duty-item" id={duty.id}>
                                     {
-                                        (index !== 0 && <button type="button" className="btn-delete" onClick={() => {handleDeleteDuty(id, duty.id)}}>–</button>)
+                                        (index !== 0 && <button type="button" className="btn-delete" disabled={!canEdit} onClick={() => {handleDeleteDuty(id, duty.id)}}>–</button>)
                                     }
                                     <InputField type="textarea" name={"Duty " + (index+1)} placeHolder="ex. Programmed a prototype that simulates humans living on the planet Jupiter." value={duty.string} setValue={(text) => {handleSetTextAreaValue(id, duty.id, text)}} canEdit={canEdit} />
                                 </div>  
