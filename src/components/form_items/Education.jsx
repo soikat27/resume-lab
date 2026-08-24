@@ -127,7 +127,7 @@ export default function Education ({resumeData, setResumeData, goToNextForm, goT
                 hasPrev={true}
                 hasEdit={!canEdit}
                 hasNext={true}
-                handlerPrev={goToPrevForm}
+                handlePrev={goToPrevForm}
                 setCanEdit={setCanEdit}
             />
         </form>

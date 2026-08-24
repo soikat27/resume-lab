@@ -1,4 +1,4 @@
-export default function ButtonGroup({hasPrev, hasEdit, hasNext, handlerPrev, setCanEdit}) { 
+export default function ButtonGroup({hasPrev, hasEdit, hasNext, handlePrev, setCanEdit}) { 
     function handleEdit() {
         setCanEdit(true);
     }
@@ -10,7 +10,7 @@ export default function ButtonGroup({hasPrev, hasEdit, hasNext, handlerPrev, set
                     <button 
                         className="btn-prev" 
                         type="button" 
-                        onClick={handlerPrev}
+                        onClick={handlePrev}
                     >
                         previous
                     </button>

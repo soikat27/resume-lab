@@ -53,7 +53,7 @@ export default function Links ({resumeData, setResumeData, goToNextForm, goToPre
                 hasPrev={true}
                 hasEdit={!canEdit}
                 hasNext={true}
-                handlerPrev={goToPrevForm}
+                handlePrev={goToPrevForm}
                 setCanEdit={setCanEdit}
             />
         </form>
