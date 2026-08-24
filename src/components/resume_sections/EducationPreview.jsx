@@ -27,7 +27,6 @@ export default function EducationPreview ({educations}) {
                                 –
                                 {education.endDate && <p className="edu-end">{formatedDate(education.endDate)}</p>}
                             </div>
-                            
                         </div>
                     </div> 
                 );

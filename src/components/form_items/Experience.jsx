@@ -1,6 +1,6 @@
 import ButtonGroup from "./utils/ButtonGroup.jsx";
 import { useState } from "react";
-import {parse, isBefore, format} from "date-fns";
+import {parse, isBefore} from "date-fns";
 import ExperienceItem from "./utils/ExperienceItem.jsx";
 
 export default function Experience({resumeData, setResumeData, goToNextForm, goToPrevForm}) {
@@ -30,15 +30,7 @@ export default function Experience({resumeData, setResumeData, goToNextForm, goT
         }
 
         // 2. update resume data and go to next form
-        const newData = experienceItems.map(experienceItem => {
-            const startDate = parse(experienceItem.startDate, "yyyy-MM", new Date());
-            const formatedStartDate = format(startDate, "MMM yyyy");
-            const endDate = parse(experienceItem.endDate, "yyyy-MM", new Date());
-            const formatedEndDate = format(endDate, "MMM yyyy");
-
-            return {...experienceItem, startDate: formatedStartDate, endDate: formatedEndDate};
-        });
-        setResumeData({ ...resumeData, experience: newData});
+        setResumeData({ ...resumeData, experience: experienceItems});
         goToNextForm();
     }
 

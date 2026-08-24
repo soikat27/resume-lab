@@ -1,6 +1,13 @@
+import {parse, format} from "date-fns";
+
 export default function ExperiencePreview ({experiences}) {
     if (!experiences)
         return;
+
+    function formatedDate(dateString) {
+        const dateObj = parse(dateString, "yyyy-MM", new Date());
+        return format(dateObj, "MMM yyyy");
+    }
 
     return (
         <div className="experience-preview">
@@ -12,9 +19,9 @@ export default function ExperiencePreview ({experiences}) {
                         <div className="first-line">
                             {experience.position && <p className="exp-name">{experience.position}</p>}
                             <div className="edu-date">
-                                {experience.startDate && <p className="exp-start">{experience.startDate}</p>}
+                                {experience.startDate && <p className="exp-start">{formatedDate(experience.startDate)}</p>}
                                 –
-                                {experience.endDate && <p className="exp-end">{experience.endDate}</p>}  
+                                {experience.endDate && <p className="exp-end">{formatedDate(experience.endDate)}</p>} 
                             </div>
                         </div>
                         <div className="last-line">
