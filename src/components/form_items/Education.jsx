@@ -4,8 +4,23 @@ import {parse, isBefore, format} from "date-fns";
 import EducationItem from "./utils/EducationItem.jsx";
 
 export default function Education ({resumeData, setResumeData, goToNextForm, goToPrevForm}) {
-    const [educationItems, setEducationItems] = useState((resumeData.education !== undefined) ? resumeData.education : []);
+    const [educationItems, setEducationItems] = useState(retrieveEducation());
     const [canEdit, setCanEdit] = useState(resumeData.education === undefined || resumeData.education.length === 0);
+
+    function retrieveEducation() {
+        if (resumeData.education === undefined)
+            return [];
+
+        const formatedEducation = resumeData.education.map(eduItem => {
+            const copy = {...eduItem};
+            const startDateObj = parse(copy.startDate, "MMM yyyy", new Date());
+            const endDateObj = parse(copy.endDate, "MMM yyyy", new Date());
+            copy.startDate = format(startDateObj, "yyyy-MM");
+            copy.endDate = format(endDateObj, "yyyy-MM");
+            return copy;
+        });
+        return formatedEducation;
+    }
 
     function handleSaveNext(event) {
         // 0. prevent the form from submitting
