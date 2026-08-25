@@ -30,7 +30,11 @@ export default function Experience({resumeData, setResumeData, goToNextForm, goT
         }
 
         // 2. update resume data and go to next form
-        setResumeData({ ...resumeData, experience: experienceItems});
+        const nextExperienceItems = experienceItems.map(experienceItem => {
+            const filtered = experienceItem.duties.filter(duty => duty.string.trim().length > 0);
+            return {...experienceItem, duties: filtered};
+        });
+        setResumeData({ ...resumeData, experience: nextExperienceItems});
         goToNextForm();
     }
 
