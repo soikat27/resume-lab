@@ -80,8 +80,8 @@ export default function GeneralInfo({resumeData, setResumeData, goToNextForm, go
             <InputField type="email" name="Email" placeHolder="ex. your_email@company.xyz" value={email} setValue={setEmail} canEdit={canEdit} />
             <InputField type="tel" name="Phone" placeHolder="ex. (xxx) xxx-xxxx" value={phone} setValue={setPhone} canEdit={canEdit} />
 
-            <InputField type="text" name="LinkedIn" placeHolder="ex. www.linkedin.com/in/user_name" value={linkedin} setValue={setLinkedin} canEdit={canEdit} />
-            <InputField type="text" name="GitHub" placeHolder="ex. www.github.com/user_name" value={github} setValue={setGithub} canEdit={canEdit} />
+            <InputField type="text" name="LinkedIn" placeHolder="ex. linkedin.com/in/username" value={linkedin} setValue={setLinkedin} canEdit={canEdit} />
+            <InputField type="text" name="GitHub" placeHolder="ex. github.com/username" value={github} setValue={setGithub} canEdit={canEdit} />
 
             <ButtonGroup 
                 hasPrev={false}

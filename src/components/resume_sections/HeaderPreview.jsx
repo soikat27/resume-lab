@@ -8,8 +8,8 @@ export default function HeaderPreview ({headerInfo}) {
                 {headerInfo.phone && <p className="item regular">{headerInfo.phone}</p>}
                 {headerInfo.email && <p className="item regular">{headerInfo.email}</p>}
 
-                {headerInfo.linkedin && <p className="item regular link">{headerInfo.linkedin}</p>}
-                {headerInfo.github && <p className="item regular link">{headerInfo.github}</p>}
+                {headerInfo.linkedin &&  <a className="item regular link" href={(headerInfo.linkedin.startsWith("http")) ? headerInfo.linkedin : "https://"+headerInfo.linkedin} target="_blank" rel="noopener noreferrer">{headerInfo.linkedin}</a>}
+                {headerInfo.github && <a className="item regular link" href={(headerInfo.github.startsWith("http")) ? headerInfo.github : "https://"+headerInfo.github} target="_blank" rel="noopener noreferrer">{headerInfo.github}</a>}
             </div>
         </div>
     );
