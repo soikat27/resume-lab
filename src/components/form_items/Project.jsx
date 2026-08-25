@@ -16,7 +16,7 @@ export default function Project({resumeData, setResumeData, goToNextForm, goToPr
         form.querySelectorAll(".project-item").forEach(projectItem => {
             const nameInput = projectItem.querySelector('[name="Project Name"]');
             const techStacksInput = projectItem.querySelector('[name="Tech Stack"]');
-            const githubLinkInput = projectItem.querySelector('[name="GitHub Link"]');
+            const githubLinkInput = projectItem.querySelector('[name="GitHub Link (highly recommended)"]');
             const highlight1Input = projectItem.querySelector('[name="Highlight 1"]');
 
             validateInputs(nameInput, techStacksInput, githubLinkInput, highlight1Input);
@@ -69,7 +69,7 @@ export default function Project({resumeData, setResumeData, goToNextForm, goToPr
     function addHighlight(projectId) {
         const nextProjectItems = projectItems.map(item => {
             if (item.id === projectId)
-                item.duties.push({id: crypto.randomUUID(), string: ""});
+                item.highlights.push({id: crypto.randomUUID(), string: ""});
 
             return item;
         });
@@ -132,7 +132,7 @@ export default function Project({resumeData, setResumeData, goToNextForm, goToPr
                             name={projectItem.name} 
                             techStacks={projectItem.techStacks} 
                             githubLink={projectItem.githubLink} 
-                            highlights={projectItem.duties}
+                            highlights={projectItem.highlights}
                             canEdit={canEdit}
                             handleSetInputValue={updateInput}
                             handleSetTextAreaValue={updateTextArea}
