@@ -129,7 +129,7 @@ export default function Experience({resumeData, setResumeData, goToNextForm, goT
     }
 
     return (
-        <form className="container experience" onSubmit={handleSaveNext}>
+        <form className="container experience" onSubmit={handleSaveNext} noValidate>
             <div className="form-title">
                 <h3>Experience</h3>
                 <button type="button" className="btn-add" disabled={!canEdit} onClick={handleAddExperience}>+</button>

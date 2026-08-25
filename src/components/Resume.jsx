@@ -1,12 +1,13 @@
-import HeaderPreview from "./resume_sections/HeaderPreview";
-import EducationPreview from "./resume_sections/EducationPreview";
-import ExperiencePreview from "./resume_sections/ExperiencePreview";
-import ProjectPreview from "./resume_sections/ProjectPreview";
+import HeaderPreview from "./resume_sections/HeaderPreview.jsx";
+import EducationPreview from "./resume_sections/EducationPreview.jsx";
+import ExperiencePreview from "./resume_sections/ExperiencePreview.jsx";
+import ProjectPreview from "./resume_sections/ProjectPreview.jsx";
+import TechnicalSkill from "./form_items/TechnicalSkill.jsx";
 
 import "../styles/resume.css";
 
 export default function Resume({resumeData}) {
-    const {name, email, phone, linkedin, github} = resumeData;
+    const {name, email, phone, linkedin, github, languages, frameworks, devTools, libraries} = resumeData;
     const headerInfo = {
         name,
         email,
@@ -14,6 +15,12 @@ export default function Resume({resumeData}) {
         linkedin,
         github
     };
+    const technicalSkills = {
+        languages,
+        frameworks,
+        devTools,
+        libraries
+    }
 
     return (
         <div className="resume">

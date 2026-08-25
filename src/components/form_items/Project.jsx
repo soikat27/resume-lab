@@ -116,7 +116,7 @@ export default function Project({resumeData, setResumeData, goToNextForm, goToPr
     }
     
     return (
-        <form className="container project" onSubmit={handleSaveNext}>
+        <form className="container project" onSubmit={handleSaveNext} noValidate>
             <div className="form-title">
                 <h3>Project</h3>
                 <button type="button" className="btn-add" disabled={!canEdit} onClick={handleAddProject}>+</button>

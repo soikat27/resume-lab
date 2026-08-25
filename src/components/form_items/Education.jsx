@@ -83,7 +83,7 @@ export default function Education ({resumeData, setResumeData, goToNextForm, goT
     }
 
     return (
-        <form className="container education" onSubmit={handleSaveNext}>
+        <form className="container education" onSubmit={handleSaveNext} noValidate>
             <div className="form-title">
                 <h3>Education</h3>
                 <button 

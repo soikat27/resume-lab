@@ -24,7 +24,7 @@ export default function ExperienceItem({id, experienceNo, position, company, loc
                                         (index !== 0 && <button type="button" className="btn-delete" disabled={!canEdit} onClick={() => {handleDeleteDuty(id, duty.id)}}>–</button>)
                                     }
                                     <InputField type="textarea" name={"Duty " + (index+1)} placeHolder="ex. Programmed a prototype that simulates humans living on the planet Jupiter." value={duty.string} setValue={(text) => {handleSetTextAreaValue(id, duty.id, text)}} canEdit={canEdit} />
-                                </div>  
+                                </div> 
                             );
                         }) 
                     }

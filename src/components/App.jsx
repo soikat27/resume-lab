@@ -4,6 +4,7 @@ import GeneralInfo from "./form_items/GeneralInfo.jsx";
 import Education from "./form_items/Education.jsx";
 import Experience from "./form_items/Experience.jsx";
 import Project from "./form_items/Project.jsx";
+import TechnicalSkill from "./form_items/TechnicalSkill.jsx";
 import Download from "./form_items/Download.jsx";
 
 import "../styles/header.css";
@@ -12,10 +13,11 @@ import githubIcon from "../assets/icons/github-icon.svg";
 
 import { useState } from "react";
 
+
 export default function App() {
     const [activeFormIndex, setActiveFormIndex] = useState(0);
 
-    const forms = [GeneralInfo, Education, Experience, Project, Download];
+    const forms = [GeneralInfo, Education, Experience, Project, TechnicalSkill, Download];
     const CurrentForm = forms[activeFormIndex];
 
     function goToNextForm() {

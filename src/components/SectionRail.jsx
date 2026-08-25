@@ -1,5 +1,5 @@
 export default function SectionRail({activeFormIndex}) {
-    const sections = ["General Information", "Education", "Experience", "Project", "Download"];
+    const sections = ["General Information", "Education", "Experience", "Project", "Technical Skill", "Download"];
     
     return (
         <div className="section_rail">
