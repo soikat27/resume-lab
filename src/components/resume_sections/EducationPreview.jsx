@@ -11,7 +11,7 @@ export default function EducationPreview ({educations}) {
 
     return (
         <div className="education-preview">
-            {(educations.length > 0) && <div className="heading">Education</div> }
+            {(educations.length > 0) && <div className="heading">Education</div>}
 
             {educations.map((education) => {
                 return (

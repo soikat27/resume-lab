@@ -314,3 +314,54 @@
     text-underline-offset: 0.12em;
 }
 
+/* ----- Technical Skills (Jake bold label + list lines) ----- */
+
+.technical-skill-preview {
+    margin-top: 0.65em;
+}
+
+.technical-skill-preview .heading {
+    margin: 0 0 0.35em;
+    padding-bottom: 0.12em;
+    font-family: var(--font-serif);
+    font-size: var(--resume-large);
+    font-weight: 400;
+    font-variant: small-caps;
+    letter-spacing: 0.06em;
+    text-align: left;
+    color: var(--color-fg);
+    border-bottom: 1px solid var(--color-fg);
+    line-height: 1.2;
+}
+
+.technical-skill-preview .items {
+    display: flex;
+    flex-direction: column;
+    gap: 0.12em;
+    font-size: var(--resume-small);
+}
+
+.technical-skill-preview .skill-line {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: baseline;
+}
+
+.technical-skill-preview .label {
+    margin: 0;
+    flex-shrink: 0;
+    font-weight: 700;
+    white-space: nowrap;
+}
+
+.technical-skill-preview .label::after {
+    content: ":";
+    font-weight: 400;
+    margin-right: 0.35em;
+}
+
+.technical-skill-preview .item {
+    margin: 0;
+    min-width: 0;
+}
+

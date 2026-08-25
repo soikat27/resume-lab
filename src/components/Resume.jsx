@@ -2,7 +2,7 @@ import HeaderPreview from "./resume_sections/HeaderPreview.jsx";
 import EducationPreview from "./resume_sections/EducationPreview.jsx";
 import ExperiencePreview from "./resume_sections/ExperiencePreview.jsx";
 import ProjectPreview from "./resume_sections/ProjectPreview.jsx";
-import TechnicalSkill from "./form_items/TechnicalSkill.jsx";
+import TechnicalSkillPreview from "./resume_sections/TechnicalSkillPreview.jsx";
 
 import "../styles/resume.css";
 
@@ -29,6 +29,7 @@ export default function Resume({resumeData}) {
                 <EducationPreview educations={resumeData.education} />
                 <ExperiencePreview experiences={resumeData.experience} />
                 <ProjectPreview projects={resumeData.project} />
+                <TechnicalSkillPreview technicalSkills={technicalSkills} />
             </div>
         </div>
     );
