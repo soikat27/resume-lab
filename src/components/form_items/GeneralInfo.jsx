@@ -6,6 +6,8 @@ export default function GeneralInfo({resumeData, setResumeData, goToNextForm, go
     const [name, setName] = useState((resumeData.name !== undefined) ? resumeData.name : "");
     const [email, setEmail] = useState((resumeData.email !== undefined) ? resumeData.email : "");
     const [phone, setPhone] = useState((resumeData.phone !== undefined) ? resumeData.phone : "");
+    const [linkedin, setLinkedin] = useState((resumeData.linkedin !== undefined) ? resumeData.linkedin : "");
+    const [github, setGithub] = useState((resumeData.github !== undefined) ? resumeData.github : "");
     const [canEdit, setCanEdit] = useState(resumeData.name === undefined);
 
     function handleSaveNext(event) {
@@ -17,6 +19,8 @@ export default function GeneralInfo({resumeData, setResumeData, goToNextForm, go
         validateName(form.elements["Full Name"]);
         validateEmail(form.elements["Email"]);
         validatePhone(form.elements["Phone"]);
+        validateLinkedin(form.elements["LinkedIn"]);
+        validateGithub(form.elements["GitHub"]);
 
         if (!form.checkValidity()) {
             form.reportValidity();
@@ -27,7 +31,9 @@ export default function GeneralInfo({resumeData, setResumeData, goToNextForm, go
         const newData = {
             name,
             email,
-            phone
+            phone,
+            linkedin,
+            github,
         }
         
         setResumeData({...resumeData, ...newData});
@@ -55,6 +61,16 @@ export default function GeneralInfo({resumeData, setResumeData, goToNextForm, go
         if (phone.trim() !== "" && phone.length > 25)
             input.setCustomValidity("Phone number is too long!");
     }
+    function validateLinkedin(input) {
+        // 1. enforce rule
+        if (linkedin.trim() !== "" && !linkedin.includes("linkedin.com"))
+            input.setCustomValidity("Please enter a valid LinkedIn url!");
+    }
+    function validateGithub(input) {
+        // 1. enforce rule
+        if (github.trim() !== "" && !github.includes("github.com"))
+            input.setCustomValidity("Please enter a valid GitHub url!");
+    }
 
     return (
         <form className="container gen_info" onSubmit={handleSaveNext} noValidate>
@@ -63,6 +79,9 @@ export default function GeneralInfo({resumeData, setResumeData, goToNextForm, go
             <InputField type="text" name="Full Name" placeHolder="ex. John Ryan" value={name} setValue={setName} canEdit={canEdit} />
             <InputField type="email" name="Email" placeHolder="ex. your_email@company.xyz" value={email} setValue={setEmail} canEdit={canEdit} />
             <InputField type="tel" name="Phone" placeHolder="ex. (xxx) xxx-xxxx" value={phone} setValue={setPhone} canEdit={canEdit} />
+
+            <InputField type="text" name="LinkedIn" placeHolder="ex. www.linkedin.com/in/user_name" value={linkedin} setValue={setLinkedin} canEdit={canEdit} />
+            <InputField type="text" name="GitHub" placeHolder="ex. www.github.com/user_name" value={github} setValue={setGithub} canEdit={canEdit} />
 
             <ButtonGroup 
                 hasPrev={false}

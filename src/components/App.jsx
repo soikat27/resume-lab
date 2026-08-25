@@ -1,7 +1,6 @@
 import SectionRail from "./SectionRail.jsx";
 import Body from "./Body.jsx";
 import GeneralInfo from "./form_items/GeneralInfo.jsx";
-import Links from "./form_items/Links.jsx";
 import Education from "./form_items/Education.jsx";
 import Experience from "./form_items/Experience.jsx";
 import Download from "./form_items/Download.jsx";
@@ -15,7 +14,7 @@ import { useState } from "react";
 export default function App() {
     const [activeFormIndex, setActiveFormIndex] = useState(0);
 
-    const forms = [GeneralInfo, Links, Education, Experience, Download];
+    const forms = [GeneralInfo, Education, Experience, Download];
     const CurrentForm = forms[activeFormIndex];
 
     function goToNextForm() {
