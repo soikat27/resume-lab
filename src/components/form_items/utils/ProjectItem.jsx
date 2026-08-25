@@ -11,7 +11,7 @@ export default function ProjectItem({id, projectNo, name, techStacks, githubLink
             <div className="inputs">
                 <InputField type="text" name="Project Name" placeHolder="ex. resumeLab" value={name} setValue={(text) => {handleSetInputValue(id, "name", text)}} canEdit={canEdit} />
                 <InputField type="text" name="Tech Stack" placeHolder="ex. HTML, CSS, JavaScript, React, API, Git" value={techStacks} setValue={(text) => {handleSetInputValue(id, "techStacks", text)}} canEdit={canEdit} />
-                <InputField type="text" name="GitHub Link" placeHolder="ex. https://github.com/username/resume-lab" value={githubLink} setValue={(text) => {handleSetInputValue(id, "githubLink", text)}} canEdit={canEdit} />
+                <InputField type="text" name="GitHub Link (highly recommended)" placeHolder="ex. https://github.com/username/resume-lab" value={githubLink} setValue={(text) => {handleSetInputValue(id, "githubLink", text)}} canEdit={canEdit} />
 
                 <div className="highlights">
                     <p>Add Highlights</p>
