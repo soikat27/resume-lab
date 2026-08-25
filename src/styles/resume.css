@@ -221,17 +221,96 @@
     text-align: right;
 }
 
-.experience-preview .duties ul {
+.experience-preview .duties ul,
+.project-preview .highlights ul {
     margin: 0.2em 0 0.1em;
     padding-left: 1.1em;
     font-size: var(--resume-small);
 }
 
-.experience-preview .duties li {
+.experience-preview .duties li,
+.project-preview .highlights li {
     margin-bottom: 0.12em;
 }
 
-.experience-preview .duties li::marker {
+.experience-preview .duties li::marker,
+.project-preview .highlights li::marker {
     font-size: 0.65em;
+}
+
+/* ----- Projects (Jake one-line heading + bullets) ----- */
+
+.project-preview {
+    margin-top: 0.65em;
+}
+
+.project-preview .heading {
+    margin: 0 0 0.35em;
+    padding-bottom: 0.12em;
+    font-family: var(--font-serif);
+    font-size: var(--resume-large);
+    font-weight: 400;
+    font-variant: small-caps;
+    letter-spacing: 0.06em;
+    text-align: left;
+    color: var(--color-fg);
+    border-bottom: 1px solid var(--color-fg);
+    line-height: 1.2;
+}
+
+.project-preview .project-item {
+    display: flex;
+    flex-direction: column;
+    gap: 0.05em;
+    margin-top: 0.45em;
+    font-size: 1em;
+}
+
+.project-preview .project-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+    gap: 0.75em;
+    font-size: var(--resume-small);
+}
+
+.project-preview .left {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: baseline;
+    min-width: 0;
+}
+
+.project-preview .project-name,
+.project-preview .project-techStacks,
+.project-preview .project-github {
+    margin: 0;
+}
+
+.project-preview .project-name {
+    font-weight: 700;
+}
+
+.project-preview .project-name:not(:last-child)::after {
+    content: "|";
+    margin-inline: 0.45em;
+    font-weight: 400;
+    color: var(--color-fg);
+}
+
+.project-preview .project-techStacks {
+    font-style: italic;
+}
+
+.project-preview .project-github {
+    flex-shrink: 0;
+    text-align: right;
+    font-weight: 700;
+    color: var(--color-fg);
+}
+
+.project-preview .project-github.link {
+    text-decoration: underline;
+    text-underline-offset: 0.12em;
 }
 

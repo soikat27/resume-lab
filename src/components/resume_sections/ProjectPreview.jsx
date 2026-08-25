@@ -14,7 +14,7 @@ export default function ProjectPreview ({projects}) {
                                 {project.name && <p className="project-name">{project.name}</p>}
                                 {project.techStacks && <p className="project-techStacks">{project.techStacks}</p>}
                             </div>
-                            {project.github && <a className="project-github" href={(project.githubLink.startsWith("http")) ? project.githubLink : "https://"+project.githubLink} target="_blank" rel="noopener noreferrer">GitHub</a>}
+                            {project.githubLink && <a className="project-github link" href={(project.githubLink.startsWith("http")) ? project.githubLink : "https://"+project.githubLink} target="_blank" rel="noopener noreferrer">GitHub</a>}
                         </div>
                         <div className="highlights">
                             <ul>
