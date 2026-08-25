@@ -15,7 +15,7 @@ export default function EducationPreview ({educations}) {
 
             {educations.map((education) => {
                 return (
-                    <div className="education-item">
+                    <div key={education.id} className="education-item">
                         <div className="first-line">
                             {education.institution && <p className="edu-name">{education.institution}</p>}
                             {education.location && <p className="edu-location">{education.location}</p>}

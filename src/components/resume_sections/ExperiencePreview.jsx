@@ -15,7 +15,7 @@ export default function ExperiencePreview ({experiences}) {
 
             {experiences.map((experience) => {
                 return (
-                    <div className="experience-item">
+                    <div key={experience.id} className="experience-item">
                         <div className="first-line">
                             {experience.position && <p className="exp-name">{experience.position}</p>}
                             <div className="edu-date">
@@ -31,7 +31,7 @@ export default function ExperiencePreview ({experiences}) {
                         <div className="duties">
                             <ul>
                                 {experience.duties.map(duty => {
-                                    return <li>{duty.string}</li>
+                                    return <li key={duty.id}>{duty.string}</li>
                                 })}
                             </ul>
                         </div>

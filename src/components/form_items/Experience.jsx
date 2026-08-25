@@ -134,7 +134,8 @@ export default function Experience({resumeData, setResumeData, goToNextForm, goT
             {
                 experienceItems.map((expItem, index) => {
                     return (
-                        <ExperienceItem 
+                        <ExperienceItem
+                            key={expItem.id}
                             id={expItem.id}
                             experienceNo={index+1} 
                             position={expItem.position} 

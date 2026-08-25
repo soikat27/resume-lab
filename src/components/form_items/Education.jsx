@@ -99,8 +99,9 @@ export default function Education ({resumeData, setResumeData, goToNextForm, goT
             {
                 educationItems.map((eduItem, index) => {
                     return (
-                        <EducationItem 
-                            id={eduItem.id} 
+                        <EducationItem
+                            key={eduItem.id}
+                            id={eduItem.id}
                             educationNo={index+1} 
                             institution={eduItem.institution} 
                             degree={eduItem.degree} 

@@ -19,7 +19,7 @@ export default function ExperienceItem({id, experienceNo, position, company, loc
                     {
                         duties.map((duty, index) => {
                             return (
-                                <div className="duty-item" id={duty.id}>
+                                <div key={duty.id} className="duty-item" id={duty.id}>
                                     {
                                         (index !== 0 && <button type="button" className="btn-delete" disabled={!canEdit} onClick={() => {handleDeleteDuty(id, duty.id)}}>–</button>)
                                     }
