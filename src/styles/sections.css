@@ -186,7 +186,8 @@ main {
 }
 
 .education .education-item,
-.experience .experience-item {
+.experience .experience-item,
+.project .project-item {
     display: flex;
     flex-direction: column;
     gap: 0.75rem;
@@ -194,20 +195,23 @@ main {
 }
 
 .education .education-item + .education-item,
-.experience .experience-item + .experience-item {
+.experience .experience-item + .experience-item,
+.project .project-item + .project-item {
     margin-top: 0.5rem;
     border-top: 1px solid var(--color-rule-soft);
 }
 
 .education .inputs,
-.experience .inputs {
+.experience .inputs,
+.project .inputs {
     display: flex;
     flex-direction: column;
     gap: 1.5rem;
 }
 
 .edu-chunk-header,
-.exp-chunk-header {
+.exp-chunk-header,
+.project-chunk-header {
     display: flex;
     align-items: center;
     justify-content: space-between;
@@ -215,7 +219,8 @@ main {
 }
 
 .edu-chunk-title,
-.exp-chunk-title {
+.exp-chunk-title,
+.project-chunk-title {
     margin: 0;
     font-family: var(--font-sans);
     font-size: 0.8125rem;
@@ -224,7 +229,8 @@ main {
     color: var(--color-fg);
 }
 
-.duties {
+.duties,
+.highlights {
     display: grid;
     grid-template-columns: 1fr auto;
     align-items: center;
@@ -232,7 +238,8 @@ main {
     row-gap: 0.75rem;
 }
 
-.duties > p {
+.duties > p,
+.highlights > p {
     margin: 0;
     font-family: var(--font-sans);
     font-size: 0.75rem;
@@ -241,17 +248,20 @@ main {
     color: var(--color-muted);
 }
 
-.duties > .duty-item {
+.duties > .duty-item,
+.highlights > .highlight-item {
     grid-column: 1 / -1;
 }
 
-.duty-item {
+.duty-item,
+.highlight-item {
     display: flex;
     align-items: flex-start;
     gap: 0.75rem;
 }
 
-.duty-item .field {
+.duty-item .field,
+.highlight-item .field {
     flex: 1;
     min-width: 0;
 }
