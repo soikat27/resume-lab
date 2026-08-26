@@ -5,6 +5,10 @@ import "../styles/sections.css";
 
 import { useState } from "react";
 
+/**
+ * Main workspace: form on the left, live resume preview on the right.
+ * Holds resumeData and handles Autofill plus Load from a saved JSON file.
+ */
 export default function Body({formInfo, goToNextForm, goToPrevForm, resetFormIndex}) {
     const Form = formInfo.currentForm;
 

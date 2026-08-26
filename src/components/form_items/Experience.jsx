@@ -3,6 +3,9 @@ import { useState } from "react";
 import {parse, isBefore} from "date-fns";
 import ExperienceItem from "./utils/ExperienceItem.jsx";
 
+/**
+ * Experience step: jobs with duties, then save into resumeData.
+ */
 export default function Experience({resumeData, setResumeData, goToNextForm, goToPrevForm}) {
     const [experienceItems, setExperienceItems] = useState((resumeData.experience !== undefined) ? resumeData.experience : []);
     const [canEdit, setCanEdit] = useState(resumeData.experience === undefined || resumeData.experience.length ===0);

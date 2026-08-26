@@ -13,7 +13,10 @@ import githubIcon from "../assets/icons/github-icon.svg";
 
 import { useState } from "react";
 
-
+/**
+ * App shell: header, footer, and the current form step.
+ * Owns which step is active and passes next/prev/reset into Body.
+ */
 export default function App() {
     const [activeFormIndex, setActiveFormIndex] = useState(0);
 

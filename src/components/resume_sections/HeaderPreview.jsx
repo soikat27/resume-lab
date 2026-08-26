@@ -1,3 +1,6 @@
+/**
+ * Preview header: name and contact line.
+ */
 export default function HeaderPreview ({headerInfo}) {
     return (
         <div className="header-preview">

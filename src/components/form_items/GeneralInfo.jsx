@@ -2,6 +2,9 @@ import InputField from "./utils/InputField";
 import ButtonGroup from "./utils/ButtonGroup";
 import { useState } from "react";
 
+/**
+ * First step: name and contact details.
+ */
 export default function GeneralInfo({resumeData, setResumeData, goToNextForm, goToPrevForm}) {
     const [name, setName] = useState((resumeData.name !== undefined) ? resumeData.name : "");
     const [email, setEmail] = useState((resumeData.email !== undefined) ? resumeData.email : "");

@@ -1,5 +1,8 @@
 import "../../../styles/inputField.css";
 
+/**
+ * Labeled text, email, tel, month, or textarea field used across form steps.
+ */
 export default function InputField({type, name, placeHolder, value, setValue, canEdit}) {
     function handleSetValue(event) {
         // 1. reset custom validity

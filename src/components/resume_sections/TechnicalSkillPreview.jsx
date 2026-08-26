@@ -1,3 +1,6 @@
+/**
+ * Preview Technical Skills: bold category labels and comma-separated lists.
+ */
 export default function TechnicalSkillPreview({technicalSkills}) {
     function hasTechnicalSkills() {
         return (technicalSkills.languages !== undefined) && ((technicalSkills.languages.length > 0) || (technicalSkills.frameworks.length > 0) && (technicalSkills.devTools.length > 0) && (technicalSkills.libraries.length > 0));

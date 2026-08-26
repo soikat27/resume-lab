@@ -6,6 +6,9 @@ import TechnicalSkillPreview from "./resume_sections/TechnicalSkillPreview.jsx";
 
 import "../styles/resume.css";
 
+/**
+ * Live letter preview. Composes header and section previews from resumeData.
+ */
 export default function Resume({resumeData}) {
     const {name, email, phone, linkedin, github, languages, frameworks, devTools, libraries} = resumeData;
     const headerInfo = {

@@ -1,3 +1,6 @@
+/**
+ * Shared Previous, Edit, Save & Next, and Download controls for each form step.
+ */
 export default function ButtonGroup({hasPrev, hasEdit, hasNext, handlePrev, setCanEdit, handleDownload}) { 
     function handleEdit() {
         setCanEdit(true);

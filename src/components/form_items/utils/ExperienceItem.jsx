@@ -1,5 +1,8 @@
 import InputField from "./InputField";
 
+/**
+ * One job entry in the form, including the duties list.
+ */
 export default function ExperienceItem({id, experienceNo, position, company, location, duties, startDate, endDate, canEdit, handleSetInputValue, handleSetTextAreaValue, handleDeleteExperience, handleAddDuty, handleDeleteDuty}) {
     return (
         <div className="experience-item" id={id}>

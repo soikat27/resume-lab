@@ -1,5 +1,8 @@
 import InputField from "./InputField";
 
+/**
+ * One education entry in the form (school, degree, dates).
+ */
 export default function EducationItem({id, educationNo, institution, degree, location, startDate, endDate, canEdit, handleSetValue, handleDelete}) {
     return (
         <div className="education-item" id={id}>

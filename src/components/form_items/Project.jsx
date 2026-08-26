@@ -3,6 +3,9 @@ import ButtonGroup from "./utils/ButtonGroup.jsx";
 
 import { useState } from "react";
 
+/**
+ * Projects step: name, stack, GitHub link, and highlights.
+ */
 export default function Project({resumeData, setResumeData, goToNextForm, goToPrevForm}) {
     const [projectItems, setProjectItems] = useState((resumeData.project !== undefined) ? resumeData.project : []);
     const [canEdit, setCanEdit] = useState(resumeData.project === undefined || resumeData.project.length ===0);

@@ -1,5 +1,8 @@
 import {parse, format} from "date-fns";
 
+/**
+ * Preview Experience section: two-line job headings and duty bullets.
+ */
 export default function ExperiencePreview ({experiences}) {
     if (!experiences)
         return;

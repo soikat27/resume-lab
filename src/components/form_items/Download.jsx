@@ -2,6 +2,9 @@ import ButtonGroup from "./utils/ButtonGroup.jsx";
 
 import "../../styles/download.css";
 
+/**
+ * Last step: save resumeData as JSON, then print / Save as PDF.
+ */
 export default function Download({resumeData, goToPrevForm}) {
     function downloadResume() {
         // 1. show print windown

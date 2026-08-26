@@ -1,3 +1,6 @@
+/**
+ * Preview Projects section: name | stack, GitHub, and highlight bullets.
+ */
 export default function ProjectPreview ({projects}) {
     if (!projects)
         return;

@@ -1,5 +1,8 @@
 import InputField from "./InputField";
 
+/**
+ * One project entry in the form, including highlights.
+ */
 export default function ProjectItem({id, projectNo, name, techStacks, githubLink, highlights, canEdit, handleSetInputValue, handleSetTextAreaValue, handleDeleteProject, handleAddHighlight, handleDeleteHighlight}) {
     return (
         <div className="project-item" id={id}>

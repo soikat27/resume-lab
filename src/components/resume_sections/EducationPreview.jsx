@@ -1,5 +1,8 @@
 import {parse, format} from "date-fns";
 
+/**
+ * Preview Education section (Jake two-line school headings).
+ */
 export default function EducationPreview ({educations}) {
     if (!educations)
         return;

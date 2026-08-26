@@ -3,6 +3,9 @@ import { useState } from "react";
 import {parse, isBefore} from "date-fns";
 import EducationItem from "./utils/EducationItem.jsx";
 
+/**
+ * Education step: add, edit, or remove schools, then save into resumeData.
+ */
 export default function Education ({resumeData, setResumeData, goToNextForm, goToPrevForm}) {
     const [educationItems, setEducationItems] = useState((resumeData.education !== undefined) ? resumeData.education : []);
     const [canEdit, setCanEdit] = useState(resumeData.education === undefined || resumeData.education.length === 0);

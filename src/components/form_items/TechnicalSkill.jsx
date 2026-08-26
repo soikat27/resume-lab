@@ -2,6 +2,9 @@ import InputField from "./utils/InputField";
 import ButtonGroup from "./utils/ButtonGroup";
 import { useState } from "react";
 
+/**
+ * Technical skills step: languages, frameworks, tools, and libraries.
+ */
 export default function TechnicalSkill({resumeData, setResumeData, goToNextForm, goToPrevForm}) {
     const [languages, setLanguages] = useState((resumeData.languages !== undefined) ? resumeData.languages : "");
     const [frameworks, setFrameworks] = useState((resumeData.frameworks !== undefined) ? resumeData.frameworks : "");
