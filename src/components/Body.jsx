@@ -41,14 +41,17 @@ export default function Body({formInfo, goToNextForm, goToPrevForm, resetFormInd
             <div className="main-title">
                 <div className="title">
                     <h2>Build your resume in {formInfo.totalForms} steps.</h2>
-                    <div className="buttons">
+                    <div className="title-actions">
                         <button type="button" className="btn-secondary" onClick={handleAutofill}>Autofill</button>
-                        <input type="file" accept=".json" onChange={handleLoadResume} />
+                        <label className="btn-secondary btn-load">
+                            Load Data
+                            <input type="file" accept=".json" onChange={handleLoadResume} />
+                        </label>
                     </div>
                     
                 </div>
-                <h4>Fill each section, preview on the right, download when you're done. <span className="jake-resume">Inspired from <a href="https://github.com/jakegut/resume">Jake's resume</a>.</span></h4>
-                <p><span>Caution: </span>You must use a valid JSON file(generated from <span>resumeLab</span>)  while loading a saved resume data.</p>
+                <h4>Fill each section, preview on the right, download when you're done. <span className="jake-resume">Inspired by <a href="https://github.com/jakegut/resume" target="_blank" rel="noopener noreferrer">Jake's resume</a>.</span></h4>
+                <p><span>Caution: </span>Load only a JSON file saved from <span>resumeLab</span>. Other files will not work.</p>
             </div>
             <div className="main-body">
                 <div className="form">
