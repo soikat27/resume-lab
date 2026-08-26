@@ -79,18 +79,25 @@
     color: var(--color-fg);
 }
 
-.header-preview .item.link {
+.header-preview .item.link,
+.project-preview .project-github.link {
     text-decoration: underline;
     text-underline-offset: 0.12em;
 }
 
-/* ----- Education (Jake two-line subheading) ----- */
+/* ----- Shared section chrome ----- */
 
-.education-preview {
+.education-preview,
+.experience-preview,
+.project-preview,
+.technical-skill-preview {
     margin-top: 0.65em;
 }
 
-.education-preview .heading {
+.education-preview .heading,
+.experience-preview .heading,
+.project-preview .heading,
+.technical-skill-preview .heading {
     margin: 0 0 0.35em;
     padding-bottom: 0.12em;
     font-family: var(--font-serif);
@@ -104,7 +111,8 @@
     line-height: 1.2;
 }
 
-.education-preview .education-item {
+.education-preview .education-item,
+.experience-preview .experience-item {
     display: flex;
     flex-direction: column;
     gap: 0.05em;
@@ -113,12 +121,16 @@
 }
 
 .education-preview .first-line,
-.education-preview .last-line {
+.education-preview .last-line,
+.experience-preview .first-line,
+.experience-preview .last-line {
     display: flex;
     justify-content: space-between;
     align-items: baseline;
     gap: 0.75em;
 }
+
+/* ----- Education (Jake two-line subheading) ----- */
 
 .education-preview .edu-name,
 .education-preview .edu-location,
@@ -154,40 +166,6 @@
 }
 
 /* ----- Experience (Jake two-line subheading + bullets) ----- */
-
-.experience-preview {
-    margin-top: 0.65em;
-}
-
-.experience-preview .heading {
-    margin: 0 0 0.35em;
-    padding-bottom: 0.12em;
-    font-family: var(--font-serif);
-    font-size: var(--resume-large);
-    font-weight: 400;
-    font-variant: small-caps;
-    letter-spacing: 0.06em;
-    text-align: left;
-    color: var(--color-fg);
-    border-bottom: 1px solid var(--color-fg);
-    line-height: 1.2;
-}
-
-.experience-preview .experience-item {
-    display: flex;
-    flex-direction: column;
-    gap: 0.05em;
-    margin-top: 0.45em;
-    font-size: 1em;
-}
-
-.experience-preview .first-line,
-.experience-preview .last-line {
-    display: flex;
-    justify-content: space-between;
-    align-items: baseline;
-    gap: 0.75em;
-}
 
 .experience-preview .exp-name,
 .experience-preview .exp-start,
@@ -240,24 +218,6 @@
 
 /* ----- Projects (Jake one-line heading + bullets) ----- */
 
-.project-preview {
-    margin-top: 0.65em;
-}
-
-.project-preview .heading {
-    margin: 0 0 0.35em;
-    padding-bottom: 0.12em;
-    font-family: var(--font-serif);
-    font-size: var(--resume-large);
-    font-weight: 400;
-    font-variant: small-caps;
-    letter-spacing: 0.06em;
-    text-align: left;
-    color: var(--color-fg);
-    border-bottom: 1px solid var(--color-fg);
-    line-height: 1.2;
-}
-
 .project-preview .project-item {
     display: flex;
     flex-direction: column;
@@ -309,30 +269,7 @@
     color: var(--color-fg);
 }
 
-.project-preview .project-github.link {
-    text-decoration: underline;
-    text-underline-offset: 0.12em;
-}
-
 /* ----- Technical Skills (Jake bold label + list lines) ----- */
-
-.technical-skill-preview {
-    margin-top: 0.65em;
-}
-
-.technical-skill-preview .heading {
-    margin: 0 0 0.35em;
-    padding-bottom: 0.12em;
-    font-family: var(--font-serif);
-    font-size: var(--resume-large);
-    font-weight: 400;
-    font-variant: small-caps;
-    letter-spacing: 0.06em;
-    text-align: left;
-    color: var(--color-fg);
-    border-bottom: 1px solid var(--color-fg);
-    line-height: 1.2;
-}
 
 .technical-skill-preview .items {
     display: flex;

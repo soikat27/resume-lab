@@ -31,7 +31,7 @@ export default function Download({resumeData, goToPrevForm}) {
             <p>Review the resume preview thoroughly! Go to previous sections to make necessary changes if desired.</p>
             <div className="save">
                 <p>Before you hit <span>Download</span>, save a JSON copy of your data on your device. You can load it later instead of typing everything again.</p>
-                <button className="btn-save" onClick={handleSave}>Save Data</button>
+                <button className="btn-secondary btn-save" onClick={handleSave}>Save Data</button>
             </div>
             <p>When the file is saved, hit the download button below and have your resume handy.</p>
 
