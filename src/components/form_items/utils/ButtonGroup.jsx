@@ -6,42 +6,12 @@ export default function ButtonGroup({hasPrev, hasEdit, hasNext, handlePrev, setC
     return (
         <div className="buttons">
             <div className="left">
-                {hasPrev && 
-                    <button 
-                        className="btn-prev" 
-                        type="button" 
-                        onClick={handlePrev}
-                    >
-                        previous
-                    </button>
-                }
+                {hasPrev && <button className="btn-prev" type="button" onClick={handlePrev}>previous</button>}
             </div>
             <div className="right">
-                {hasEdit && 
-                    <button 
-                        className="btn-edit" 
-                        type="button" 
-                        onClick={handleEdit}
-                    >
-                        Edit
-                    </button>
-                }
-                {(hasNext) ? ( 
-                    <button 
-                        className="btn-next" 
-                        type="submit"
-                    >
-                        Save & Next
-                    </button>
-                    ) : (
-                        <button 
-                            className="btn-download" 
-                            type="button"
-                            onClick={handleDownload}
-                        >
-                            Download
-                        </button>
-                    )
+                {hasEdit && <button className="btn-edit" type="button" onClick={handleEdit}>Edit</button>}
+                {(hasNext) ? (<button className="btn-next" type="submit">Save & Next</button>) : 
+                    (<button className="btn-download" type="button" onClick={handleDownload}>Download</button>)
                 }
             </div>
         </div>  
