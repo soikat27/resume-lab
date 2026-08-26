@@ -1,4 +1,4 @@
-export default function ButtonGroup({hasPrev, hasEdit, hasNext, handlePrev, setCanEdit}) { 
+export default function ButtonGroup({hasPrev, hasEdit, hasNext, handlePrev, setCanEdit, handleDownload}) { 
     function handleEdit() {
         setCanEdit(true);
     }
@@ -36,7 +36,8 @@ export default function ButtonGroup({hasPrev, hasEdit, hasNext, handlePrev, setC
                     ) : (
                         <button 
                             className="btn-download" 
-                            type="button" 
+                            type="button"
+                            onClick={handleDownload}
                         >
                             Download
                         </button>

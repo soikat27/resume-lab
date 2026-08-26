@@ -1,6 +1,12 @@
 import ButtonGroup from "./utils/ButtonGroup.jsx";
 
-export default function Download({resumeData, setResumeData, goToPrevForm}) {
+import "../../styles/download.css";
+
+export default function Download({goToPrevForm}) {
+    function downloadResume() {
+        // 1. show print windown
+        window.print()
+    }
     return (
         <div className="container download">
             <h3>Download Your Resume</h3>
@@ -12,6 +18,7 @@ export default function Download({resumeData, setResumeData, goToPrevForm}) {
                 hasEdit={false}
                 hasNext={false}
                 handlePrev={goToPrevForm}
+                handleDownload={downloadResume}
             />
         </div>
     );

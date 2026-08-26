@@ -1,0 +1,62 @@
+@page {
+    size: letter;
+    margin: 0.5in;
+}
+
+@media print {
+    header,
+    footer,
+    .main-title,
+    .form {
+        display: none !important;
+    }
+
+    html,
+    body,
+    #root,
+    .main-container,
+    main,
+    .main-body {
+        height: auto;
+        min-height: 0;
+        max-width: none;
+        margin: 0;
+        padding: 0;
+        overflow: visible;
+    }
+
+    main {
+        display: block;
+        gap: 0;
+        flex: none;
+    }
+
+    .main-body {
+        display: block;
+    }
+
+    .resume {
+        display: block;
+        width: 100%;
+        height: auto;
+        min-width: 0;
+        min-height: 0;
+        padding: 0;
+        border: none;
+        overflow: visible;
+        container-type: normal;
+    }
+
+    .resume-page {
+        width: 100%;
+        height: auto;
+        aspect-ratio: auto;
+        padding: 0;
+        overflow: visible;
+        border: none;
+        box-shadow: none;
+        font-size: 11pt;
+        print-color-adjust: exact;
+        -webkit-print-color-adjust: exact;
+    }
+}
