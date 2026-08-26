@@ -362,6 +362,7 @@
 
 .technical-skill-preview .item {
     margin: 0;
+    flex: 1;
     min-width: 0;
 }
 

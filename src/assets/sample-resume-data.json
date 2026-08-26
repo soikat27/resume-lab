@@ -154,6 +154,6 @@
   ],
   "languages": "Java, Python, C/C++, SQL (Postgres), JavaScript, HTML/CSS, R",
   "frameworks": "React, Node.js, Flask, JUnit, WordPress, Material-UI, FastAPI",
-  "devTools": "Git, Docker, TravisCI, Google Cloud Platform, VS Code, Visual Studio, PyCharm, IntelliJ, Eclipse",
+  "devTools": "Git, Docker, VS Code, Visual Studio, PyCharm, IntelliJ, Eclipse",
   "libraries": "pandas, NumPy, Matplotlib"
 }
