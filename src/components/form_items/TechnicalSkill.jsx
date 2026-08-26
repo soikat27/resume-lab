@@ -18,7 +18,7 @@ export default function TechnicalSkill({resumeData, setResumeData, goToNextForm,
         const newData = {
             languages: languages.trim(),
             frameworks: frameworks.trim(),
-            devtools: devTools.trim(),
+            devTools: devTools.trim(),
             libraries: libraries.trim()
         }
         

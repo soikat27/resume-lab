@@ -26,6 +26,9 @@ export default function App() {
     function goToPrevForm() {
         setActiveFormIndex(Math.max(activeFormIndex-1, 0));
     }
+    function resetFormIndex() {
+        setActiveFormIndex(0);
+    }
 
     return (
         <div className="main-container">
@@ -43,6 +46,7 @@ export default function App() {
                 formInfo={{currentFormIndex: activeFormIndex, currentForm: CurrentForm, totalForms: forms.length}}
                 goToNextForm={goToNextForm}
                 goToPrevForm={goToPrevForm}
+                resetFormIndex={resetFormIndex}
             />
 
             <footer>

@@ -1,0 +1,159 @@
+{
+  "name": "Jake Ryan",
+  "email": "jake@su.edu",
+  "phone": "123-456-7890",
+  "linkedin": "linkedin.com/in/jake",
+  "github": "github.com/jake",
+  "education": [
+    {
+      "id": "edu-1",
+      "institution": "Gettysburg College",
+      "degree": "Bachelor of Arts in Computer Science, Minor in Business",
+      "location": "Gettysburg, PA",
+      "startDate": "2018-08",
+      "endDate": "2021-05"
+    },
+    {
+      "id": "edu-2",
+      "institution": "Blinn College",
+      "degree": "Associate's in Liberal Arts",
+      "location": "Bryan, TX",
+      "startDate": "2014-08",
+      "endDate": "2018-05"
+    }
+  ],
+  "experience": [
+    {
+      "id": "exp-1",
+      "position": "Undergraduate Research Assistant",
+      "company": "Texas A&M University",
+      "location": "College Station, TX",
+      "startDate": "2020-06",
+      "endDate": "2026-08",
+      "duties": [
+        {
+          "id": "exp-1-d1",
+          "string": "Developed a REST API using FastAPI and PostgreSQL to store data from learning management systems"
+        },
+        {
+          "id": "exp-1-d2",
+          "string": "Developed a full-stack web application using Flask, React, PostgreSQL and Docker to analyze GitHub data"
+        },
+        {
+          "id": "exp-1-d3",
+          "string": "Explored ways to visualize GitHub collaboration in a classroom setting"
+        }
+      ]
+    },
+    {
+      "id": "exp-2",
+      "position": "Information Technology Support Specialist",
+      "company": "Gettysburg College",
+      "location": "Gettysburg, PA",
+      "startDate": "2018-09",
+      "endDate": "2026-08",
+      "duties": [
+        {
+          "id": "exp-2-d1",
+          "string": "Communicate with managers to set up campus computers used on campus"
+        },
+        {
+          "id": "exp-2-d2",
+          "string": "Assess and troubleshoot computer problems brought by students, faculty and staff"
+        },
+        {
+          "id": "exp-2-d3",
+          "string": "Maintain upkeep of computers, classroom equipment, and 200 printers across campus"
+        }
+      ]
+    },
+    {
+      "id": "exp-3",
+      "position": "Artificial Intelligence Research Assistant",
+      "company": "Gettysburg College",
+      "location": "Gettysburg, PA",
+      "startDate": "2019-05",
+      "endDate": "2019-07",
+      "duties": [
+        {
+          "id": "exp-3-d1",
+          "string": "Explored methods to generate video game dungeons based off of The Legend of Zelda"
+        },
+        {
+          "id": "exp-3-d2",
+          "string": "Developed a game in Java to test the generated dungeons"
+        },
+        {
+          "id": "exp-3-d3",
+          "string": "Contributed 50K+ lines of code to an established codebase via Git"
+        },
+        {
+          "id": "exp-3-d4",
+          "string": "Conducted a human subject study to determine which video game dungeon generation technique is enjoyable"
+        },
+        {
+          "id": "exp-3-d5",
+          "string": "Wrote an 8-page paper and gave multiple presentations on-campus"
+        },
+        {
+          "id": "exp-3-d6",
+          "string": "Presented virtually to the World Conference on Computational Intelligence"
+        }
+      ]
+    }
+  ],
+  "project": [
+    {
+      "id": "proj-1",
+      "name": "Gitlytics",
+      "techStacks": "Python, Flask, React, PostgreSQL, Docker",
+      "githubLink": "https://github.com/jake/gitlytics",
+      "highlights": [
+        {
+          "id": "proj-1-h1",
+          "string": "Developed a full-stack web application using Flask serving a REST API with React as the frontend"
+        },
+        {
+          "id": "proj-1-h2",
+          "string": "Implemented GitHub OAuth to get data from user's repositories"
+        },
+        {
+          "id": "proj-1-h3",
+          "string": "Visualized GitHub data to show collaboration"
+        },
+        {
+          "id": "proj-1-h4",
+          "string": "Used Celery and Redis for asynchronous tasks"
+        }
+      ]
+    },
+    {
+      "id": "proj-2",
+      "name": "Simple Paintball",
+      "techStacks": "Spigot API, Java, Maven, TravisCI, Git",
+      "githubLink": "https://github.com/jake/simple-paintball",
+      "highlights": [
+        {
+          "id": "proj-2-h1",
+          "string": "Developed a Minecraft server plugin to entertain kids during free time for a previous job"
+        },
+        {
+          "id": "proj-2-h2",
+          "string": "Published plugin to websites gaining 2K+ downloads and an average 4.5/5-star review"
+        },
+        {
+          "id": "proj-2-h3",
+          "string": "Implemented continuous delivery using TravisCI to build the plugin upon a new release"
+        },
+        {
+          "id": "proj-2-h4",
+          "string": "Collaborated with Minecraft server administrators to suggest features and get feedback about the plugin"
+        }
+      ]
+    }
+  ],
+  "languages": "Java, Python, C/C++, SQL (Postgres), JavaScript, HTML/CSS, R",
+  "frameworks": "React, Node.js, Flask, JUnit, WordPress, Material-UI, FastAPI",
+  "devTools": "Git, Docker, TravisCI, Google Cloud Platform, VS Code, Visual Studio, PyCharm, IntelliJ, Eclipse",
+  "libraries": "pandas, NumPy, Matplotlib"
+}
