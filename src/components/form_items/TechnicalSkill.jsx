@@ -6,7 +6,7 @@ export default function TechnicalSkill({resumeData, setResumeData, goToNextForm,
     const [languages, setLanguages] = useState((resumeData.languages !== undefined) ? resumeData.languages : "");
     const [frameworks, setFrameworks] = useState((resumeData.frameworks !== undefined) ? resumeData.frameworks : "");
     const [devTools, setDevTools] = useState((resumeData.devTools !== undefined) ? resumeData.devTools : "");
-    const [libraries, setLibraries] = useState((resumeData.linkedin !== undefined) ? resumeData.linkedin : "");
+    const [libraries, setLibraries] = useState((resumeData.libraries !== undefined) ? resumeData.libraries : "");
 
     const [canEdit, setCanEdit] = useState((resumeData.languages === undefined) || ((resumeData.languages.length === 0) && (resumeData.frameworks.length === 0) && (resumeData.devTools.length === 0) && (resumeData.languages.libraries === 0)));
 
